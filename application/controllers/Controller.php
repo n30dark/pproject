@@ -6,9 +6,6 @@
  * Time: 11:20
  */
 
-namespace application\controllers;
-
-
 class Controller
 {
     protected $_model;

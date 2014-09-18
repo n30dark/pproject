@@ -6,8 +6,6 @@
  * Time: 11:16
  */
 
-namespace application\utilities;
-
 class View
 {
     protected $_file;

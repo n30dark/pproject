@@ -12,10 +12,33 @@
  * @license   All rights reserved
  */
 
-namespace application\controllers;
+class IndexController {
 
+    protected $_model;
+    protected $_controller;
+    protected $_action;
+    protected $_view;
+    protected $_modelBaseName;
 
-class IndexController extends Controller{
+    public function __construct($model, $action)
+    {
+        $this->_controller = ucwords(__CLASS__);
+        $this->_action = $action;
+        $this->_modelBaseName = $model;
+
+        $this->_view = new View(HOME . DS . 'views' . DS . strtolower($this->_modelBaseName) . DS . $action . '.phtml');
+    }
+
+    protected function _setModel($modelName)
+    {
+        $modelName .= 'Model';
+        $this->_model = new $modelName();
+    }
+
+    protected function _setView($viewName)
+    {
+        $this->_view = new View(HOME . DS . 'views' . DS . strtolower($this->_modelBaseName) . DS . $viewName . '.phtml');
+    }
 
     public function index() {
 
@@ -25,6 +48,7 @@ class IndexController extends Controller{
             $this->_view->set('jsonBrushes', json_encode($brushes));
 
             return $this->_view->output();
+
         } catch (Exception $e) {
             echo "Application error: " . $e->getMessage();
         }

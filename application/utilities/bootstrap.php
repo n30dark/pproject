@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sergiopaulino
- * Date: 18/09/14
- * Time: 11:19
- */
 
-$controller = "index";
+$controller = "Index";
 $action = "index";
 $query = null;
 
@@ -30,6 +24,9 @@ if (isset($_GET['load']))
 
 $modelName = $controller;
 $controller .= 'Controller';
+
+__autoload($controller);
+
 $load = new $controller($modelName, $action);
 
 if (method_exists($load, $action))

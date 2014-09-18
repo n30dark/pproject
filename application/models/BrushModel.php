@@ -12,8 +12,6 @@
  * @license   All rights reserved
  */
 
-namespace application\models;
-
 class BrushModel {
 
     public $id;
