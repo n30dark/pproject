@@ -23,12 +23,12 @@ class BrushPackModel {
     public function __construct($json) {
         $pack = json_decode($json);
 
-        $this->id = $pack['id'];
-        $this->brush = $pack['brush'];
-        $this->numBrushes = $pack['numBrushes'];
-        $this->price = $pack['price'];
-        if ( count($pack['retailers'] ) > 0 ) {
-            $this->retailers = $pack['retailers'];
+        $this->id = $pack->id;
+        $this->brush = $pack->brush;
+        $this->numBrushes = $pack->numBrushes;
+        $this->price = $pack->price;
+        if ( count($pack->retailers ) > 0 ) {
+            $this->retailers = $pack->retailers;
         } else {
             unset($this->retailers);
         }

@@ -62,14 +62,20 @@ class IndexController {
         $brushes = array();
 
         //run through all Json in the json folder
-        $path = "/content/json/brush/";
-        if (is_dir($path)) {
+        $path =  getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "brush" . DS;
+
+        if (scandir($path)) {
             if ($dh = opendir($path)) {
                 //foreach file, getBrush(filename)
                 while (($file = readdir($dh)) !== false ) {
-                    $aux = explode(".", $file);
-                    $brushId = $aux[0];
-                    $brushes[] = $this->getBrush($brushId);
+                    if ($file != "." && $file != ".." && $file != ".AppleDouble") {
+                        echo "<pre>";
+                        print_r($file);
+                        echo "</pre>";
+                        $aux = explode(".", $file);
+                        $brushId = $aux[0];
+                        $brushes[] = $this->getBrush($brushId);
+                    }
                 }
             }
         }
@@ -82,7 +88,7 @@ class IndexController {
     public function getBrush($brushId){
 
         //get brush from json folder (brushID should be the same as the filename, minus ".json")
-        $json = file_get_contents("/content/json/brush/" . $brushId . ".json");
+        $json = file_get_contents(getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "brush" . DS . $brushId . ".json");
         $brush = new \BrushModel($json);
 
         //$this->getBrushPackModel($brushId)
@@ -106,7 +112,7 @@ class IndexController {
     public function getBrushPack($brushId) {
 
         //get BrushPackModel from json folder (brushId should be the same as the filename, minus ".json")
-        $json = file_get_contents("/content/json/brushPack/" . $brushId . ".json");
+        $json = file_get_contents(getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "brushPack" . DS . $brushId . ".json");
         $brushPack  = new \BrushPackModel($json);
 
         //return BrushPackModel
@@ -150,7 +156,7 @@ class IndexController {
     public function getRetailer($retailerId) {
 
         //get retailer from json folder (retailerId should be the same as the filename, minus ".json")
-        $json = file_get_contents("/content/json/retailer/" . $retailerId . ".json");
+        $json = file_get_contents(getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "retailer" .DS . $retailerId . ".json");
         $retailer = new \RetailerModel($json);
 
         //return Retailer Object
