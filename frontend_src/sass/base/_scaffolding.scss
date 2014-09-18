@@ -1,0 +1,38 @@
+// Base
+// ---------------------------------
+
+* {
+    &,
+    &:before,
+    &:after {
+        @include box-sizing(border-box);
+    }
+}
+
+html,
+body {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $text-color;
+    background-color: $black;
+}
+
+.main {
+    position: relative;
+    max-width: $container-xl-width;
+    height: 100%;
+    margin: auto;
+}
+
+img {
+    max-width: 100%;
+}

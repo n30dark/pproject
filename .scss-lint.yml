@@ -1,0 +1,16 @@
+exclude:
+    - 'bower_components/**'
+
+linters:
+    Indentation:
+        width: 4
+    PlaceholderInExtend:
+        enabled: false
+    PropertySortOrder:
+        enabled: false
+    TrailingSemicolonAfterPropertyValue:
+        enabled: false
+    SelectorDepth:
+        max_depth: 3
+    DuplicateProperty:
+        enabled: false
