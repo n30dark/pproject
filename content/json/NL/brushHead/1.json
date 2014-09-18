@@ -1,0 +1,9 @@
+{
+    "id" : 1,
+    "key" : "12AF-67R",
+    "name" : "Super Clean 2000",
+    "description" : "Lorem ipsum dolor sit amet consecteuer adiscipt",
+    "image" : "superclean2000.png",
+    "isStandard" : true,
+    "brushPack" : 1
+}
