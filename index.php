@@ -1,10 +1,9 @@
 <?php
-define ('DS', DIRECTORY_SEPARATOR);
+define ('DS', DIRECTORY_SEPARATOR . "application/");
 define ('HOME', dirname(__FILE__));
 
 ini_set ('display_errors', 1);
 
-require_once HOME . DS . 'config.php';
 require_once HOME . DS . 'utilities' . DS . 'bootstrap.php';
 
 function __autoload($class)
