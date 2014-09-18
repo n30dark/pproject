@@ -1,6 +1,6 @@
 <?php
-define ('DS', DIRECTORY_SEPARATOR . "application/");
-define ('HOME', dirname(__FILE__));
+define ('DS', DIRECTORY_SEPARATOR );
+define ('HOME', dirname(__FILE__) . DS . "application" );
 
 ini_set ('display_errors', 1);
 
