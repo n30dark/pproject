@@ -12,8 +12,6 @@
  * @license   All rights reserved
  */
 
-namespace application\models;
-
 class BrushModel {
 
     public $id;
@@ -24,13 +22,13 @@ class BrushModel {
     public function __construct($json) {
         $brush = json_decode($json);
 
-        $this->id = $brush['id'];
-        $this->name = $brush['name'];
-        $this->image = $brush['image'];
-        if ( count($brush['compatibleBrushes'] ) > 0 ) {
-            $this->compatibleBrushes = $brush['compatibleBrushes'];
+        $this->id = $brush->id;
+        $this->name = $brush->name;
+        $this->image = $brush->image;
+        if ( count($brush->compatibleBrushHeads ) > 0 ) {
+            $this->compatibleBrushHeads = $brush->compatibleBrushHeads;
         } else {
-            unset($this->compatibleBrushes);
+            unset($this->compatibleBrushHeads);
         }
     }
 

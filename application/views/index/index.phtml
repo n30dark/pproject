@@ -1,0 +1,53 @@
+<?php
+
+echo "<pre>";
+print_r($brushes);
+echo "</pre>";
+
+
+foreach($brushes as $brush) :
+
+    ?>
+<div id="<?php echo $brush->id ?>" class="brush" style="background-image: url('<?php echo $brush->image ?>')">
+    <div class="name"><?php echo $brush->name ?></div>
+</div>
+<?php
+endforeach;
+?>
+
+
+<?php foreach($brushes as $brush) : ?>
+<div id="brushHeads_<?php echo $brush->id ?>" class="brushHeadList">
+    <?php foreach($brush->compatibleBrushHeads as $brushhead) : ?>
+        <div id="<?php echo $brushhead->id ?>" class="brushhead" style="background-image: url('<?php echo $brushhead->image ?>')">
+            <?php if($brushhead->isStandard) : ?>
+                <div class="standardRibbon"></div>
+            <?php endif; ?>
+            <div class="key"><?php echo $brushhead->key ?></div>
+            <div class="name"><?php echo $brushhead->name ?></div>
+            <div class="description"><?php echo $brushhead->description ?></div>
+
+            <div class="brushPacks">
+                <?php foreach($brushhead->brushPacks as $brushPack) : ?>
+                    <div class="brushpack" id="<?php echo $brushPack->id ?>">
+                        <div class="numbrushes">X <?php echo $brushPack->numBrushes ?></div>
+                        <div class="price"><?php echo $brushPack->price ?>&euro;</div>
+
+                        <div class="retailers">
+                            <?php foreach($brushPack->retailers as $retailer) : ?>
+                                <div class="retailer" id="<?php echo $retailer->id ?>">
+                                    <div class="name"><?php echo $retailer->name ?></div>
+                                    <a href="<?php echo $retailer->website ?>">
+                                        <img src="<?php echo $retailer->logo ?>" />
+                                    </a>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+        </div>
+    <?php endforeach; ?>
+</div>
+<?php endforeach; ?>

@@ -12,8 +12,6 @@
  * @license   All rights reserved
  */
 
-namespace application\models;
-
 class RetailerModel {
 
     public $id;
@@ -24,10 +22,10 @@ class RetailerModel {
     public function __construct($json) {
         $retailer = json_decode($json);
 
-        $this->id = $retailer['id'];
-        $this->name = $retailer['name'];
-        $this->website = $retailer['website'];
-        $this->logo = $retailer['logo'];
+        $this->id = $retailer->id;
+        $this->name = $retailer->name;
+        $this->website = $retailer->website;
+        $this->logo = $retailer->logo;
 
     }
 
