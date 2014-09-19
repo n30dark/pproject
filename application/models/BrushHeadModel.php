@@ -25,14 +25,14 @@ class BrushHeadModel {
     public function __construct($json) {
         $brushhead = json_decode($json);
 
-        $this->id = $brushhead['id'];
-        $this->key = $brushhead['key'];
-        $this->name = $brushhead['name'];
-        $this->description = $brushhead['description'];
-        $this->image = $brushhead['image'];
-        $this->isStandard = $brushhead['isStandard'];
-        if ( count($brushhead['brushPack'] ) > 0 ) {
-            $this->brushPack = $brushhead['brushPack'];
+        $this->id = $brushhead->id;
+        $this->key = $brushhead->key;
+        $this->name = $brushhead->name;
+        $this->description = $brushhead->description;
+        $this->image = $brushhead->image;
+        $this->isStandard = $brushhead->isStandard;
+        if ( count($brushhead->brushPack ) > 0 ) {
+            $this->brushPack = $brushhead->brushPack;
         } else {
             unset($this->brushPack);
         }

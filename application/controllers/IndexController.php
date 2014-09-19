@@ -69,9 +69,6 @@ class IndexController {
                 //foreach file, getBrush(filename)
                 while (($file = readdir($dh)) !== false ) {
                     if ($file != "." && $file != ".." && $file != ".AppleDouble") {
-                        echo "<pre>";
-                        print_r($file);
-                        echo "</pre>";
                         $aux = explode(".", $file);
                         $brushId = $aux[0];
                         $brushes[] = $this->getBrush($brushId);
@@ -91,17 +88,37 @@ class IndexController {
         $json = file_get_contents(getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "brush" . DS . $brushId . ".json");
         $brush = new \BrushModel($json);
 
-        //$this->getBrushPackModel($brushId)
-        $brush->brushPack = $this->getBrushPack($brushId);
-
         //$this->getCompatibleBrushes($brushId)
-        $brush->compatibleBrushes = $this->getCompatibleBrushes($brushId);
-
-        //$this->getRetailer($brushId)
-        $brush->retailers = $this->getRetailers($brushId);
+        $compatibleBrushes = array();
+        foreach($brush->compatibleBrushHeads as $compatible) {
+            if(file_exists(getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "brushHead" . DS . $compatible . ".json")){
+                $compatibleBrushes[] = $this->getBrushHead($compatible);
+            }
+        }
+        $brush->compatibleBrushHeads = $compatibleBrushes;
 
         //return brush object
         return $brush;
+
+    }
+
+    public function getBrushHead($brushHeadId) {
+
+        //get brushhead from json folder (brushHeadID should be the same as the filename, minus ".json")
+        $json = file_get_contents(getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "brushHead" . DS . $brushHeadId . ".json");
+        $brushHead = new \BrushHeadModel($json);
+
+        //$this->getCompatibleBrushes($brushId)
+        $brushPackList = array();
+        foreach($brushHead->brushPack as $brushPack) {
+            if(file_exists(getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "brushPack" . DS . $brushPack . ".json")){
+                $brushPackList[] = $this->getBrushPack($brushPack);
+            }
+        }
+        $brushHead->brushPacks = $brushPackList;
+
+        //return brush object
+        return $brushHead;
 
     }
 
@@ -109,48 +126,23 @@ class IndexController {
         return json_encode($this->getBrush($brushId));
     }
 
-    public function getBrushPack($brushId) {
+    public function getBrushPack($brushPackId) {
 
         //get BrushPackModel from json folder (brushId should be the same as the filename, minus ".json")
-        $json = file_get_contents(getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "brushPack" . DS . $brushId . ".json");
+        $json = file_get_contents(getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "brushPack" . DS . $brushPackId . ".json");
         $brushPack  = new \BrushPackModel($json);
+
+        //get retailer for this BrushPack
+        $retailerList = array();
+        foreach($brushPack->retailers as $retailer) {
+            if(file_exists(getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "retailer" . DS . $retailer . ".json")){
+                $retailerList[] = $this->getRetailer($retailer);
+            }
+        }
+        $brushPack->retailers = $retailerList;
 
         //return BrushPackModel
         return $brushPack;
-    }
-
-    public function getCompatibleBrushes($brushId) {
-
-        //$this->getBrush($brushId)
-        $brush = $this->getBrush($brushId);
-
-        $compatibleBrushes = array();
-
-        //foreach id, getBrush(id)
-        foreach($brush->compatibleBrushes as $compatible) {
-            $compatibleBrushes[] = $this->getBrush($compatible);
-        }
-
-        //return the compatibleBrushes
-        return $compatibleBrushes;
-
-    }
-
-    public function getRetailers($brushId) {
-
-        //$this->getBrush($brushId)
-        $brush = $this->getBrush($brushId);
-
-        $retailerList = array();
-
-        //foreach Retailer; $this->getRetailer($retailerId)
-        foreach($brush->retailers as $retailer) {
-            $retailerList[] = $this->getRetailer($retailer);
-        }
-
-        //return retailer array
-        return $retailerList;
-
     }
 
     public function getRetailer($retailerId) {

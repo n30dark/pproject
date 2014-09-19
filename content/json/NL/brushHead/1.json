@@ -5,5 +5,5 @@
     "description" : "Lorem ipsum dolor sit amet consecteuer adiscipt",
     "image" : "superclean2000.png",
     "isStandard" : true,
-    "brushPack" : 1
+    "brushPack" : [1]
 }
