@@ -9,10 +9,6 @@ em,
 p {
     line-height: $line-height-base;
     margin: 0 0 $line-height-computed;
-
-    &:last-child {
-        margin-bottom: 0;
-    }
 }
 
 small,
@@ -86,6 +82,7 @@ h6,
 
 // Lists
 // -------------------------
+
 .list-unstyled {
     list-style: none;
     padding: 0;

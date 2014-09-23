@@ -23,12 +23,12 @@ body {
     font-size: $font-size-base;
     line-height: $line-height-base;
     color: $text-color;
-    background-color: $black;
+    background-color: $bg-color;
 }
 
 .main {
     position: relative;
-    max-width: $container-xl-width;
+    max-width: $container-md-width;
     height: 100%;
     margin: auto;
 }
