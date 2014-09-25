@@ -58,6 +58,7 @@
     "strict": false,
 
     "predef": [
-        "Modernizr"
+        "Modernizr",
+        "app"
     ]
 }

@@ -53,6 +53,12 @@ $content-padding-sm: 45px 35px;
 $content-padding-md: 45px 75px;
 
 
+// Footer
+// ---------------------------------
+
+$footer-padding-xs: $content-padding-xs;
+$footer-padding-md: 70px 60px - ($grid-gutter-width / 2);
+
 // Z-index master list
 // ---------------------------------
 $zindex-preloadscreen: 10;

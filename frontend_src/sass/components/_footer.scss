@@ -1,0 +1,159 @@
+.footer {
+    @include clearfix;
+    text-align: center;
+    @include background(linear-gradient(145deg, #0b2265, #0039a6));
+    color: #b3c8e6;
+
+    a {
+        color: $white;
+    }
+
+    .icon-arrow-right {
+        background: url('/content/images/footer/footer-arrow-right.png') no-repeat center center;
+        display: inline-block;
+        height: 9px;
+        width: 9px;
+    }
+
+    .icon-arrow-down {
+        background: url('/content/images/footer/footer-arrow-down.png') no-repeat center center;
+        display: inline-block;
+        height: 9px;
+        width: 9px;
+    }
+}
+
+.footer-row {
+    padding: $footer-padding-xs;
+}
+
+.footer-logo {
+    padding: 50px 0;
+}
+
+.footer-share {
+    padding-bottom: 30px;
+}
+
+.footer-nav {
+    margin-bottom: 10px;
+    padding: 0 $grid-gutter-width / 2;
+
+    li {
+        display: inline-block;
+        padding: 0 5px;
+    }
+}
+
+.footer-copyright {
+    margin-bottom: 33px;
+    padding: 0 $grid-gutter-width / 2;
+    text-align: center;
+}
+
+.footer-title {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    font-weight: normal;
+    margin-bottom: 7px;
+    -webkit-font-smoothing: auto;
+}
+
+.footer-title-sub {
+    display: block;
+    color: $white;
+}
+
+.footer-selectsite {
+    position: relative;
+    @include clearfix;
+
+    .footer-title {
+        cursor: pointer;
+    }
+
+    .footer-dropdown {
+        position: absolute;
+        display: none;
+        right: 0;
+        width: 200px;
+        padding: 14px 20px;
+        background: $white;
+        color: $black;
+
+        a {
+            color: $black;
+        }
+    }
+
+    &.active,
+    &:hover {
+        .footer-dropdown {
+            display: inline-block;
+        }
+    }
+}
+
+.footer-selectcountry-label {
+    display: block;
+    color: #b3c8e6;
+}
+
+@media (min-width: $container-sm) {
+    .footer-row {
+        @include clearfix;
+        max-width: $container-md-width;
+        margin: 0 auto;
+        padding: $footer-padding-md;
+    }
+
+    .footer-logo {
+        padding: 0;
+        @include column(2);
+        @include column-push(5);
+        line-height: 0;
+    }
+
+    .footer-links,
+    .footer-share {
+        @include column(5);
+        margin-top: 40px;
+    }
+
+    .footer-share {
+        @include column-pull(7);
+        text-align: left;
+
+        img {
+            width: 20px;
+        }
+    }
+
+    .footer-title-sub,
+    .footer-selectcountry-label {
+        display: inline;
+    }
+
+    .footer-links {
+        text-align: right;
+    }
+
+    .footer-nav {
+        font-size: 0;
+
+        li {
+            font-size: $font-size-base;
+            border-left: 1px solid #b9bbc7;
+
+            &:first-child {
+                border-left: 0;
+            }
+        }
+    }
+
+    .footer-selectsite {
+        .footer-dropdown {
+            text-align: left;
+        }
+    }
+}
