@@ -1,0 +1,16 @@
+{
+    "id": "HX6511_02",
+    "name": "EasyClean",
+    "image": "easyclean.png",
+    "compatibleBrushHeads": [
+        "HX6013",
+        "HX6023",
+        "HX6062-W",
+        "HX6072",
+        "HX6062-B",
+        "HX9002-S",
+        "HX9002-C",
+        "HX9023",
+        "HX9033"
+    ]
+}

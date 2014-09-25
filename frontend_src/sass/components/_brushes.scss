@@ -1,3 +1,16 @@
 .brushes {
-    display: block;
+    background: url('/content/images/brush-bg.jpg') repeat-x center top;
+}
+
+.brushes-container {
+    height: 550px;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: url('/content/images/brush-main-bg.jpg') no-repeat center top;
+}
+
+@media (min-width: $container-sm) {
+    .brushes-container {
+        height: 706px;
+    }
 }

@@ -1,15 +1,20 @@
 <div class="brushes">
+    <div class="brushes-container">
     <?php foreach($brushes as $brush) : ?>
-        <div id="<?php echo $brush->id ?>" class="brush" style="background-image: url('<?php echo $brush->image ?>')">
+        <div id="brush-<?php echo $brush->id ?>" class="brush">
+            <img src="/content/images/handles/<?php echo $brush->image ?>" alt="" />
             <div class="name"><?php echo $brush->name ?></div>
         </div>
     <?php endforeach; ?>
+    </div>
 </div>
 
 <?php foreach($brushes as $brush) : ?>
-    <div id="brushHeads_<?php echo $brush->id ?>" class="brushHeadList">
+    <div id="brushheads-<?php echo $brush->id ?>" class="brushheads">
+
         <?php foreach($brush->compatibleBrushHeads as $brushhead) : ?>
-            <div id="<?php echo $brushhead->id ?>" class="brushhead" style="background-image: url('<?php echo $brushhead->image ?>')">
+            <div id="brushhead-<?php echo $brushhead->id ?>" class="brushhead">
+                <img src="/content/images/brushes/<?php echo $brushhead->image ?>" alt="" />
                 <?php if($brushhead->isStandard) : ?>
                     <div class="standardRibbon"></div>
                 <?php endif; ?>
@@ -17,9 +22,9 @@
                 <div class="name"><?php echo $brushhead->name ?></div>
                 <div class="description"><?php echo $brushhead->description ?></div>
 
-                <div class="brushPacks">
+                <div class="brushpacks">
                     <?php foreach($brushhead->brushPacks as $brushPack) : ?>
-                        <div class="brushpack" id="<?php echo $brushPack->id ?>">
+                        <div class="brushpack" id="brushpack-<?php echo $brushPack->id ?>">
                             <div class="numbrushes">X <?php echo $brushPack->numBrushes ?></div>
                             <div class="price"><?php echo $brushPack->price ?>&euro;</div>
 
@@ -28,7 +33,7 @@
                                     <div class="retailer" id="<?php echo $retailer->id ?>">
                                         <div class="name"><?php echo $retailer->name ?></div>
                                         <a href="<?php echo $retailer->website ?>">
-                                            <img src="<?php echo $retailer->logo ?>" />
+                                            <img src="/content/images/retailer/<?php echo $retailer->logo ?>" alt="" />
                                         </a>
                                     </div>
                                 <?php endforeach; ?>
@@ -36,8 +41,8 @@
                         </div>
                     <?php endforeach; ?>
                 </div>
-
             </div>
         <?php endforeach; ?>
+
     </div>
 <?php endforeach; ?>

@@ -1,0 +1,16 @@
+{
+    "id": "HX9110_02",
+    "name": "FlexCare Platinum",
+    "image": "flexcare-platinum.png",
+    "compatibleBrushHeads": [
+        "HX9002-S",
+        "HX9002-C",
+        "HX6062-W",
+        "HX6072",
+        "HX6062-B",
+        "HX6013",
+        "HX6023",
+        "HX9023",
+        "HX9033"
+    ]
+}

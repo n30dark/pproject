@@ -1,0 +1,9 @@
+{
+    "id": "HX9002",
+    "key": "HX9002",
+    "name": "InterCare - standard",
+    "description": "Lorem ipsum dolor sit amet consecteuer adiscipt",
+    "image": "intercare-standard.jpg",
+    "isStandard": true,
+    "brushPack": []
+}

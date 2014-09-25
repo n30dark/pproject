@@ -1,0 +1,16 @@
+{
+    "id": "HX6902_02",
+    "name": "FlexCare",
+    "image": "flexcare.png",
+    "compatibleBrushHeads": [
+        "HX6013",
+        "HX6023",
+        "HX9002-S",
+        "HX9002-C",
+        "HX6062-W",
+        "HX6072",
+        "HX6062-B",
+        "HX9023",
+        "HX9033"
+    ]
+}
