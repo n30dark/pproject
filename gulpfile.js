@@ -12,44 +12,44 @@ var BUILDTYPE_DEV = 'dev',
     BUILDTYPE_PRODUCTION = 'production';
 
 // load our project config file
-var pathsSrc  = 'frontend_src/',
+var pathsSrc = 'frontend_src/',
     pathsDest = 'content/';
 
 var config = {
     // src paths, which hold our js, scss and other things that need to be pre-processed
     src: {
-        js:   pathsSrc + 'js/',
+        js: pathsSrc + 'js/',
         sass: pathsSrc + 'sass/'
     },
 
     // destination paths (public folder)
     dest: {
-        js:   pathsDest + 'js/',
-        css:  pathsDest + 'css/',
-        img:  pathsDest + 'img/',
+        js: pathsDest + 'js/',
+        css: pathsDest + 'css/',
+        img: pathsDest + 'img/',
         font: pathsDest + 'fonts/'
     },
 
     pattern: {
         sass: '**/*.scss',
-        css:  '**/*.css',
-        js:   '**/*.js'
+        css: '**/*.css',
+        js: '**/*.js'
     }
 };
 
 // and create some shortcuts
-var gulp        = require('gulp'),
-    util        = require('gulp-util'),
-    browserify  = require('gulp-browserify'),
-    cache       = require('gulp-cache'),
-    rename      = require('gulp-rename'),
-    imagemin    = require('gulp-imagemin'),
-    jshint      = require('gulp-jshint'),
-    livereload  = require('gulp-livereload'),
-    mincss      = require('gulp-minify-css'),
-    sass        = require('gulp-sass'),
-    scsslint    = require('gulp-scss-lint'),
-    uglify      = require('gulp-uglify');
+var gulp = require('gulp'),
+    util = require('gulp-util'),
+    browserify = require('gulp-browserify'),
+    cache = require('gulp-cache'),
+    rename = require('gulp-rename'),
+    imagemin = require('gulp-imagemin'),
+    jshint = require('gulp-jshint'),
+    livereload = require('gulp-livereload'),
+    mincss = require('gulp-minify-css'),
+    sass = require('gulp-sass'),
+    scsslint = require('gulp-scss-lint'),
+    uglify = require('gulp-uglify');
 
 // shortcut command: gulp --production, or shortcut gulp --p
 var isProductionBuild = (util.env.production || util.env.p) ? true : false;
@@ -104,6 +104,18 @@ gulp.task('js', ['jshint', 'js-head'], function() {
                     path: 'bower_components/jquery/dist/jquery.js',
                     exports: '$'
                 },
+                underscore: {
+                    path: 'bower_components/underscore/underscore.js',
+                    exports: '_'
+                },
+                backbone: {
+                    path: 'bower_components/backbone/backbone.js',
+                    depends: {
+                        jquery: '$',
+                        underscore: '_'
+                    },
+                    exports: 'Backbone'
+                },
                 modernizr: {
                     path: 'bower_components/modernizr/modernizr.js',
                     exports: 'Modernizr'
@@ -128,8 +140,8 @@ gulp.task('js', ['jshint', 'js-head'], function() {
  */
 gulp.task('js-head', function() {
     var headSrc = [
-            'bower_components/modernizr/modernizr.js'
-        ];
+        'bower_components/modernizr/modernizr.js'
+    ];
 
     return gulp.src(headSrc)
         .pipe(uglify())
@@ -142,7 +154,8 @@ gulp.task('jshint', function() {
 
     return gulp.src(config.src.js + config.pattern.js)
         .pipe(jshint('.jshintrc'))
-        .pipe(isProductionBuild ? jshint.reporter('fail') : jshint.reporter('default'));
+        .pipe(isProductionBuild ? jshint.reporter('fail') : jshint.reporter(
+            'default'));
 });
 
 /**
@@ -190,8 +203,7 @@ gulp.task('build-production', ['css', 'js', 'images'], function() {
 gulp.task('default', function() {
     if (isProductionBuild) {
         gulp.start('build-' + BUILDTYPE_PRODUCTION);
-    }
-    else {
+    } else {
         gulp.start('build-' + BUILDTYPE_DEV);
     }
 });
