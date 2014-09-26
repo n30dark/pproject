@@ -1,16 +1,173 @@
 .brushes {
+    position: relative;
     background: url('/content/images/brush-bg.jpg') repeat-x center top;
+
+    .btn-prev,
+    .btn-next {
+        position: absolute;
+        top: 50%;
+    }
+
+    .btn-prev {
+        right: 50%;
+        @include transform(translate3d(-40px, 0, 0));
+    }
+
+    .btn-next {
+        left: 50%;
+        @include transform(translate3d(40px, 0, 0));
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        margin-left: -30px;
+        @include triangle(60px, $white, down);
+    }
+}
+
+.brushes-text {
+    max-width: $container-md-width;
+    margin: 0 auto;
 }
 
 .brushes-container {
     height: 550px;
     max-width: 1400px;
     margin: 0 auto;
+    padding: $content-padding-xs;
     background: url('/content/images/brush-main-bg.jpg') no-repeat center top;
+
+    .brush-indicators {
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .brush-indicator {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 2px 7px;
+        background-color: $blue-lighter;
+        border-radius: 100%;
+
+        &.active {
+            width: 14px;
+            height: 14px;
+            margin: 0 5px;
+            background-color: $blue;
+        }
+    }
+}
+
+.brushes-list {
+    position: relative;
+    height: 320px;
+
+    .brush {
+        position: absolute;
+        width: 90px;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        text-align: center;
+        @include transform(translate3d(-50%, 0, 0));
+    }
+
+    .brush-name {
+        position: absolute;
+        top: 225px;
+        left: 0;
+        width: 100%;
+    }
+
+    .brush-img,
+    .brush-img-blur {
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        height: 190px;
+        max-width: none;
+        @include transform(translate3d(-50%, 0, 0));
+        @include transition-property (opacity, transform);
+        @include transition-duration(.5s);
+        @include transition-timing-function(ease);
+    }
+
+    .brush-img {
+        opacity: 0;
+    }
+
+    .active {
+        width: 120px;
+
+        .brush-img,
+        .brush-img-blur {
+            height: 270px;
+            @include transform(translate3d(-50%, -30px, 0));
+        }
+
+        .brush-img {
+            opacity: 1;
+        }
+
+        .brush-img-blur {
+            opacity: 0;
+        }
+    }
 }
 
 @media (min-width: $container-sm) {
     .brushes-container {
         height: 706px;
+        padding: $content-padding-sm;
+    }
+}
+
+@media (min-width: $container-md) {
+    .brushes {
+        .btn-prev {
+            @include transform(translate3d(-60px, 0, 0));
+        }
+
+        .btn-next {
+            @include transform(translate3d(60px, 0, 0));
+        }
+    }
+
+    .brushes-container {
+        height: 706px;
+        padding: $content-padding-md;
+    }
+
+    .brushes-list {
+        height: 430px;
+
+        .brush {
+            width: 140px;
+        }
+
+        .brush-name {
+            top: 340px;
+        }
+
+        .brush-img,
+        .brush-img-blur {
+            top: 40px;
+            height: 290px;
+        }
+
+        .active {
+            width: 230px;
+
+            .brush-img,
+            .brush-img-blur {
+                height: 410px;
+                @include transform(translate3d(-50%, -40px, 0));
+            }
+        }
     }
 }

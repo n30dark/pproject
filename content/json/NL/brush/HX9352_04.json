@@ -1,16 +1,10 @@
 {
     "id": "HX9352_04",
     "name": "DiamondClean Black",
-    "image": "diamondclean-black.png",
+    "image": "diamondclean-black",
     "compatibleBrushHeads": [
-        "HX6062-B",
-        "HX6062-W",
-        "HX6072",
-        "HX9002-S",
-        "HX9002-C",
-        "HX6013",
-        "HX6023",
-        "HX9023",
-        "HX9033"
+        "HX6062_33",
+        "HX6062_07",
+        "HX6072_07"
     ]
 }

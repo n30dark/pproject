@@ -1,48 +1,88 @@
 <div class="brushes">
     <div class="brushes-container">
-    <?php foreach($brushes as $brush) : ?>
-        <div id="brush-<?php echo $brush->id ?>" class="brush">
-            <img src="/content/images/handles/<?php echo $brush->image ?>" alt="" />
-            <div class="name"><?php echo $brush->name ?></div>
+        <div class="brushes-text">
+            <h3>Find the right brush for your Philips Sonicare toothbrush</h3>
+            <p>Choose your Sonicare toothbrush to see all compatible brush heads</p>
         </div>
-    <?php endforeach; ?>
+
+        <div class="brushes-list">
+            <?php foreach($brushes as $i => $brush) : ?>
+                <div id="brush-<?php echo $brush->id ?>" class="brush <?php echo ($i === 0) ? 'active' : ''; ?>">
+                    <img class="brush-img" src="/content/images/handles/<?php echo $brush->image ?>.png" alt="" />
+                    <img class="brush-img-blur" src="/content/images/handles/<?php echo $brush->image ?>-blur.png" alt="" />
+                    <div class="brush-name"><?php echo $brush->name ?></div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+        <button type="button" class="btn-prev">&lsaquo;</button>
+        <button type="button" class="btn-next">&rsaquo;</button>
+
+        <ol class="list-unstyled brush-indicators">
+            <?php foreach($brushes as $i => $brush) : ?>
+                <li data-id="brush-<?php echo $brush->id ?>" class="brush-indicator <?php echo ($i === 0) ? 'active' : ''; ?>"></li>
+            <?php endforeach; ?>
+        </ol>
     </div>
 </div>
 
-<?php foreach($brushes as $brush) : ?>
-    <div id="brushheads-<?php echo $brush->id ?>" class="brushheads">
+<div class="brushheads">
+    <div class="brushheads-container">
+        <?php foreach($brushes as $i => $brush) : ?>
+            <div id="brushheads-<?php echo $brush->id ?>" class="brushhead-collection <?php echo ($i === 0) ? 'active' : ''; ?>">
 
-        <?php foreach($brush->compatibleBrushHeads as $brushhead) : ?>
-            <div id="brushhead-<?php echo $brushhead->id ?>" class="brushhead">
-                <img src="/content/images/brushes/<?php echo $brushhead->image ?>" alt="" />
-                <?php if($brushhead->isStandard) : ?>
-                    <div class="standardRibbon"></div>
-                <?php endif; ?>
-                <div class="key"><?php echo $brushhead->key ?></div>
-                <div class="name"><?php echo $brushhead->name ?></div>
-                <div class="description"><?php echo $brushhead->description ?></div>
+                <?php foreach($brush->compatibleBrushHeads as $i => $brushhead) : ?>
+                    <div id="brushhead-<?php echo $brushhead->id ?>" class="brushhead <?php echo ($i === 0) ? 'active' : ''; ?>">
+                        <div class="brushhead-image">
+                            <img src="/content/images/brushes/<?php echo $brushhead->image ?>" alt="" />
+                        </div>
 
-                <div class="brushpacks">
-                    <?php foreach($brushhead->brushPacks as $brushPack) : ?>
-                        <div class="brushpack" id="brushpack-<?php echo $brushPack->id ?>">
-                            <div class="numbrushes">X <?php echo $brushPack->numBrushes ?></div>
-                            <div class="price"><?php echo $brushPack->price ?>&euro;</div>
+                        <?php if ($brushhead->isStandard) : ?>
+                            <div class="brushhead-ribbon">standard</div>
+                        <?php endif; ?>
 
-                            <div class="retailers">
-                                <?php foreach($brushPack->retailers as $retailer) : ?>
-                                    <div class="retailer" id="<?php echo $retailer->id ?>">
-                                        <div class="name"><?php echo $retailer->name ?></div>
-                                        <a href="<?php echo $retailer->website ?>">
-                                            <img src="/content/images/retailer/<?php echo $retailer->logo ?>" alt="" />
-                                        </a>
-                                    </div>
+                        <div class="brushhead-content">
+                            <div class="name"><?php echo $brushhead->name ?></div>
+                            <small class="key"><?php echo $brushhead->key ?></small>
+                            <div class="description"><?php echo $brushhead->description ?></div>
+
+                            <div class="brushhead-packs">
+                                <?php foreach($brushhead->brushPacks as $i => $brushPack) : ?>
+                                    <button type="button" class="brushhead-pack-btn <?php echo ($i === 0) ? 'active' : ''; ?>" data-id="brushpack-<?php echo $brushPack->id ?>">
+                                        <div class="brush-icon">
+                                            <i class="icon icon-brush"></i>
+                                            x
+                                            <span class="brush-icon-count"><?php echo $brushPack->numBrushes ?></span>
+                                        </div>
+                                        <div class="numbrushes"><?php echo $brushPack->numBrushes ?> pack</div>
+                                    </button>
                                 <?php endforeach; ?>
                             </div>
                         </div>
-                    <?php endforeach; ?>
-                </div>
+
+                        <div class="brushpack-collection">
+                            <div class="brushpack-arrow"></div>
+
+                            <?php foreach($brushhead->brushPacks as $i => $brushPack) : ?>
+                                <div class="brushpack <?php echo ($i === 0) ? 'active' : ''; ?>" id="brushpack-<?php echo $brushPack->id ?>">
+                                    <div class="numbrushes">X <?php echo $brushPack->numBrushes ?></div>
+                                    <p>Subscribe your frequent delivery of your brushes at on of these retailers:</p>
+
+                                    <div class="retailers">
+                                        <?php foreach($brushPack->retailers as $retailer) : ?>
+                                            <a class="retailer" id="<?php echo $retailer->id ?>" href="<?php echo $retailer->website ?>">
+                                                <img src="/content/images/retailer/<?php echo $retailer->logo ?>" alt="" />
+                                                <span class="name"><?php echo $retailer->name ?></span>
+                                            </a>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+
             </div>
         <?php endforeach; ?>
-
     </div>
-<?php endforeach; ?>
+</div>

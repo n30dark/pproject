@@ -1,236 +1,39 @@
-@font-face {
-    font-family: 'philips-icon';
-    src: url('../fonts/philips-icon.eot');
-    src: url('../fonts/philips-icon.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/philips-icon.woff') format('woff'),
-         url('../fonts/philips-icon.ttf') format('truetype'),
-         url('../fonts/philips-icon.svg#philips-icon') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-// Use the following CSS code if you want to use data attributes for inserting your icons
-[data-icon]:before {
-    font-family: 'philips-icon';
-    content: attr(data-icon);
-    speak: none;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-}
+@include font-face(sonicare, '../fonts/sonicare');
 
-// Use the following CSS code if you want to have a class per icon
-
-// Instead of a list of all class selectors,
-// you can use the generic selector below, but it's slower:
-// [class*='p-icon-'] {
-.p-icon-earth,
-.p-icon-caret-right,
-.p-icon-caret-left,
-.p-icon-caret-up,
-.p-icon-caret-down,
-.p-icon-arrow-down,
-.p-icon-arrow-up,
-.p-icon-flag,
-.p-icon-envelope,
-.p-icon-comment,
-.p-icon-mobile,
-.p-icon-box,
-.p-icon-hourglass,
-.p-icon-power-cord,
-.p-icon-cycle,
-.p-icon-alert,
-.p-icon-magnet,
-.p-icon-zoom-in,
-.p-icon-download,
-.p-icon-zoom-out,
-.p-icon-fullscreen-small,
-.p-icon-fullscreen-small-2,
-.p-icon-exit-fullscreen-small,
-.p-icon-arrow-right,
-.p-icon-arrow-left,
-.p-icon-phone,
-.p-icon-magnifier,
-.p-icon-a-label,
-.p-icon-pause,
-.p-icon-mute,
-.p-icon-sound,
-.p-icon-play,
-.p-icon-close,
-.p-icon-play-circle,
-.p-icon-zandloper,
-.p-icon-uitroekteken,
-.p-icon-stekker,
-.p-icon-recycling,
-.p-icon-inhoud,
-.p-icon-box-2 {
-    font-family: 'philips-icon';
+.icon {
+    font-family: 'sonicare';
     speak: none;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
     line-height: 1;
+
+    // Better Font Rendering
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.p-icon-earth:before {
-    content: '\e002';
-}
-
-.p-icon-caret-right:before {
-    content: '\72';
-}
-
-.p-icon-caret-left:before {
-    content: '\6c';
-}
-
-.p-icon-caret-up:before {
-    content: '\75';
-}
-
-.p-icon-caret-down:before {
-    content: '\64';
-}
-
-.p-icon-arrow-down:before {
-    content: '\21';
-}
-
-.p-icon-arrow-up:before {
-    content: '\23';
-}
-
-.p-icon-flag:before {
-    content: '\24';
-}
-
-.p-icon-envelope:before {
-    content: '\25';
-}
-
-.p-icon-comment:before {
-    content: '\26';
-}
-
-.p-icon-mobile:before {
-    content: '\f10b';
-}
-
-.p-icon-box:before {
-    content: '\e003';
-}
-
-.p-icon-hourglass:before {
-    content: '\e004';
-}
-
-.p-icon-power-cord:before {
-    content: '\e005';
-}
-
-.p-icon-cycle:before {
-    content: '\e006';
-}
-
-.p-icon-alert:before {
-    content: '\e007';
-}
-
-.p-icon-magnet:before {
-    content: '\e008';
-}
-
-.p-icon-zoom-in:before {
-    content: '\e011';
-}
-
-.p-icon-download:before {
-    content: '\e012';
-}
-
-.p-icon-zoom-out:before {
-    content: '\e00d';
-}
-
-.p-icon-fullscreen-small:before {
-    content: '\e010';
-}
-
-.p-icon-fullscreen-small-2:before {
-    content: '\e00f';
-}
-
-.p-icon-exit-fullscreen-small:before {
-    content: '\e00e';
-}
-
-.p-icon-arrow-right:before {
-    content: '\63';
-}
-
-.p-icon-arrow-left:before {
-    content: '\62';
-}
-
-.p-icon-phone:before {
-    content: '\61';
-}
-
-.p-icon-magnifier:before {
+.icon-uni22:before {
     content: '\22';
 }
 
-.p-icon-a-label:before {
-    content: '\27';
+.icon-arrow-bottom:before {
+    content: '\e600';
 }
 
-.p-icon-pause:before {
-    content: '\28';
+.icon-arrow-left:before {
+    content: '\e601';
 }
 
-.p-icon-mute:before {
-    content: '\29';
+.icon-arrow-right:before {
+    content: '\e602';
 }
 
-.p-icon-sound:before {
-    content: '\2a';
+.icon-arrow-top:before {
+    content: '\e603';
 }
 
-.p-icon-play:before {
-    content: '\2b';
-}
-
-.p-icon-close:before {
-    content: '\78';
-}
-
-.p-icon-play-circle:before {
-    content: '\2c';
-}
-
-.p-icon-zandloper:before {
-    content: '\2d';
-}
-
-.p-icon-uitroekteken:before {
-    content: '\2e';
-}
-
-.p-icon-stekker:before {
-    content: '\2f';
-}
-
-.p-icon-recycling:before {
-    content: '\30';
-}
-
-.p-icon-inhoud:before {
-    content: '\31';
-}
-
-.p-icon-box-2:before {
-    content: '\32';
+.icon-brush:before {
+    content: '\e604';
 }
