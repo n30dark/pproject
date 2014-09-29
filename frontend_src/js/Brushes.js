@@ -58,7 +58,9 @@ module.exports = Backbone.View.extend({
     clickNavPrev: function(e) {
         e.preventDefault();
 
-        this.toggleItem(this.$('.brushes-list .active').prev());
+        var prev = this.$('.brushes-list .active').prev();
+
+        if (prev.length) this.toggleItem(prev);
     },
 
     /**
@@ -67,11 +69,15 @@ module.exports = Backbone.View.extend({
     clickNavNext: function(e) {
         e.preventDefault();
 
-        this.toggleItem(this.$('.brushes-list .active').next());
+        var next = this.$('.brushes-list .active').next();
+
+        if (next.length) this.toggleItem(next);
     },
 
     toggleItem: function(item) {
         this.activeIndex = this.ui.navItems.index(item);
+
+        app.trigger('select:brush', item.attr('data-id'));
 
         // Handle nav buttons.
         this.ui.navPrev.toggleClass('disabled', this.activeIndex === 0);
@@ -101,14 +107,13 @@ module.exports = Backbone.View.extend({
      */
     calcNavOffset: function(item, activeIndex) {
         var index = this.ui.navItems.index(item),
-            step = (app.size.width < 768) ? this.$el.outerWidth() / 3 : 140;
+            step = (app.size.width < 768) ? this.$el.outerWidth() / 3 : 160;
 
         return (index - activeIndex) * step;
     },
 
     calcNavItemOffset: function(item, activeIndex) {
-        return this.calcNavOffset(item, activeIndex) - (item.outerWidth() /
-            2);
+        return this.calcNavOffset(item, activeIndex) - (item.outerWidth() / 2);
     },
 
     /**
@@ -121,8 +126,7 @@ module.exports = Backbone.View.extend({
 
         this.ui.navItems.each(function() {
             TweenMax.to(this, duration, {
-                x: that.calcNavItemOffset($(this), that.activeIndex) +
-                    offset,
+                x: that.calcNavItemOffset($(this), that.activeIndex) + offset,
                 ease: Cubic.easeOut,
                 force3D: true
             });

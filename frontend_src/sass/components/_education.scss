@@ -4,7 +4,9 @@
 }
 
 .education-image {
-    height: $container-xs-height;
+    img {
+        display: block;
+    }
 }
 
 .education-content {
@@ -13,10 +15,6 @@
 }
 
 @media (min-width: $container-sm) {
-    .education-image {
-        height: $container-sm-height;
-    }
-
     .education-content {
         padding: $content-padding-sm;
     }

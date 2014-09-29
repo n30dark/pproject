@@ -4,6 +4,7 @@ var _ = require('underscore');
 var Backbone = require('backbone');
 
 var BrushesView = require('./Brushes');
+var BrushHeadsView = require('./BrushHeads');
 var FooterView = require('./Footer');
 
 $(document).ready(function() {
@@ -41,6 +42,10 @@ $(document).ready(function() {
 
     new BrushesView({
         el: $('.brushes')
+    });
+
+    new BrushHeadsView({
+        el: $('.brushheads')
     });
 
     new FooterView({

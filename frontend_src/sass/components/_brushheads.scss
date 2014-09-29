@@ -48,6 +48,20 @@
 
     .brushhead-content {
         @include column(12);
+        padding: $content-padding-xs;
+
+        .name {
+            font-size: 18px;
+            line-height: $headings-line-height;
+            color: $blue;
+        }
+
+        .key {
+            display: inline-block;
+            font-size: 12px;
+            color: $gray;
+            margin-bottom: $line-height-computed;
+        }
     }
 }
 
@@ -91,7 +105,7 @@
         }
 
         .brushhead-content {
-            @include column-width(9);
+            @include column-width(8);
             padding-top: 40px;
             padding-bottom: 40px;
         }

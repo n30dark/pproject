@@ -8,18 +8,12 @@
         color: $white;
     }
 
-    .icon-arrow-right {
-        background: url('/content/images/footer/footer-arrow-right.png') no-repeat center center;
+    .icon-arrow-right,
+    .icon-arrow-bottom {
         display: inline-block;
         height: 9px;
         width: 9px;
-    }
-
-    .icon-arrow-down {
-        background: url('/content/images/footer/footer-arrow-down.png') no-repeat center center;
-        display: inline-block;
-        height: 9px;
-        width: 9px;
+        font-size: $icon-size-xs;
     }
 }
 

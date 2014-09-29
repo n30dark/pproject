@@ -1,11 +1,25 @@
 .brushes {
     position: relative;
     background: url('/content/images/brush-bg.jpg') repeat-x center top;
+    text-align: center;
+
+    .title {
+        font-weight: bold;
+        color: $blue;
+    }
 
     .btn-prev,
     .btn-next {
         position: absolute;
         top: 50%;
+        height: 24px;
+        width: 24px;
+        font-size: $icon-size-md;
+        color: $blue;
+
+        &.disabled {
+            color: $gray;
+        }
     }
 
     .btn-prev {
@@ -40,24 +54,30 @@
     margin: 0 auto;
     padding: $content-padding-xs;
     background: url('/content/images/brush-main-bg.jpg') no-repeat center top;
+    background-size: auto 100%;
 
     .brush-indicators {
+        position: absolute;
+        left: 0;
+        bottom: 20px;
+        width: 100%;
         white-space: nowrap;
         text-align: center;
     }
 
     .brush-indicator {
         display: inline-block;
-        width: 10px;
-        height: 10px;
-        margin: 2px 7px;
+        width: 8px;
+        height: 8px;
+        margin: 2px 8px;
         background-color: $blue-lighter;
         border-radius: 100%;
+        cursor: pointer;
 
         &.active {
-            width: 14px;
-            height: 14px;
-            margin: 0 5px;
+            width: 12px;
+            height: 12px;
+            margin: 0 6px;
             background-color: $blue;
         }
     }
@@ -69,7 +89,7 @@
 
     .brush {
         position: absolute;
-        width: 90px;
+        width: 120px;
         height: 100%;
         top: 0;
         left: 50%;
@@ -79,20 +99,26 @@
 
     .brush-name {
         position: absolute;
-        top: 225px;
+        top: 0;
         left: 0;
         width: 100%;
+        color: $blue-lighter;
+        -webkit-font-smoothing: antialiased;
+        @include transform(translate3d(0, 220px, 0));
+        @include transition-property(color, transform);
+        @include transition-duration(.5s);
+        @include transition-timing-function(ease);
     }
 
     .brush-img,
     .brush-img-blur {
         position: absolute;
-        top: 30px;
+        top: 39%;
         left: 50%;
         height: 190px;
         max-width: none;
-        @include transform(translate3d(-50%, 0, 0));
-        @include transition-property (opacity, transform);
+        @include transform(translate3d(-50%, -50%, 0));
+        @include transition-property(opacity, transform);
         @include transition-duration(.5s);
         @include transition-timing-function(ease);
     }
@@ -102,12 +128,14 @@
     }
 
     .active {
-        width: 120px;
+        .brush-name {
+            color: $blue;
+            @include transform(translate3d(0, 250px, 0) scale(1.1, 1.1));
+        }
 
         .brush-img,
         .brush-img-blur {
-            height: 270px;
-            @include transform(translate3d(-50%, -30px, 0));
+            @include transform(translate3d(-50%, -50%, 0) scale(1.4, 1.4));
         }
 
         .brush-img {
@@ -121,13 +149,6 @@
 }
 
 @media (min-width: $container-sm) {
-    .brushes-container {
-        height: 706px;
-        padding: $content-padding-sm;
-    }
-}
-
-@media (min-width: $container-md) {
     .brushes {
         .btn-prev {
             @include transform(translate3d(-60px, 0, 0));
@@ -140,34 +161,56 @@
 
     .brushes-container {
         height: 706px;
-        padding: $content-padding-md;
+        padding: $content-padding-sm;
+
+        .brush-indicators {
+            bottom: 50px;
+        }
+
+        .brush-indicator {
+            width: 10px;
+            height: 10px;
+            margin: 2px 7px;
+
+            &.active {
+                width: 14px;
+                height: 14px;
+                margin: 0 5px;
+            }
+        }
     }
 
     .brushes-list {
         height: 430px;
 
         .brush {
-            width: 140px;
+            width: 160px;
         }
 
         .brush-name {
-            top: 340px;
+            @include transform(translate3d(0, 370px, 0));
         }
 
         .brush-img,
         .brush-img-blur {
-            top: 40px;
             height: 290px;
+            top: 52%;
         }
 
         .active {
-            width: 230px;
-
-            .brush-img,
-            .brush-img-blur {
-                height: 410px;
-                @include transform(translate3d(-50%, -40px, 0));
+            .brush-name {
+                @include transform(translate3d(0, 410px, 0) scale(1.1, 1.1));
             }
         }
+    }
+}
+
+@media (min-width: $container-md) {
+    .brushes {
+        text-align: left;
+    }
+
+    .brushes-container {
+        padding: $content-padding-md;
     }
 }
