@@ -3,33 +3,52 @@ var $ = require('jquery');
 var _ = require('underscore');
 var Backbone = require('backbone');
 
+var BrushesView = require('./Brushes');
+var BrushHeadsView = require('./BrushHeads');
 var FooterView = require('./Footer');
 
-rAF.init();
+$(document).ready(function() {
+    rAF.init();
 
-window.app = _.extend({}, Backbone.Events);
+    window.app = _.extend({}, Backbone.Events);
 
-var $window = $(window);
+    var $window = $(window);
 
-$window.scroll(function() {
-    window.requestAnimationFrame(function() {
-        app.trigger('scroll', $window.scrollTop());
-    });
-});
-
-$window.resize(function() {
-    window.requestAnimationFrame(function() {
-        app.trigger('resize', {
-            width: $window.width(),
-            height: $window.height()
+    $window.scroll(function() {
+        window.requestAnimationFrame(function() {
+            app.trigger('scroll', $window.scrollTop());
         });
     });
-});
 
-$(document).click(function() {
-    app.trigger('document:click');
-});
+    app.size = {
+        width: $window.width(),
+        height: $window.height()
+    };
 
-new FooterView({
-    el: $('.footer')
+    $window.resize(function() {
+        window.requestAnimationFrame(function() {
+            app.size = {
+                width: $window.width(),
+                height: $window.height()
+            };
+
+            app.trigger('resize', app.size);
+        });
+    });
+
+    $(document).click(function() {
+        app.trigger('document:click');
+    });
+
+    new BrushesView({
+        el: $('.brushes')
+    });
+
+    new BrushHeadsView({
+        el: $('.brushheads')
+    });
+
+    new FooterView({
+        el: $('.footer')
+    });
 });

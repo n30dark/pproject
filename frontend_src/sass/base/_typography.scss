@@ -11,6 +11,11 @@ p {
     margin: 0 0 $line-height-computed;
 }
 
+ul {
+    margin-top: 0;
+    margin-bottom: $line-height-computed;
+}
+
 small,
 .small {
     font-size: $font-size-small;
