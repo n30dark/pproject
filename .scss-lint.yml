@@ -11,6 +11,6 @@ linters:
     TrailingSemicolonAfterPropertyValue:
         enabled: false
     SelectorDepth:
-        max_depth: 3
+        max_depth: 6
     DuplicateProperty:
         enabled: false

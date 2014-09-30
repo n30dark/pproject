@@ -1,0 +1,57 @@
+.intro {
+    width: 100%;
+    @include clearfix;
+}
+
+.intro-image {
+    img {
+        display: block;
+    }
+}
+
+.intro-cell {
+    width: 100%;
+    padding: $content-padding-xs;
+    background-color: $blue;
+    color: $white;
+}
+
+@media (min-width: $container-sm) {
+    .intro-cell {
+        padding: $content-padding-sm;
+    }
+}
+
+@media (min-width: $container-md) {
+    .intro {
+        display: table;
+        table-layout: fixed;
+        height: $container-md-height;
+        background: url('../images/intro-bg.jpg') center top no-repeat;
+    }
+
+    .intro-image {
+        display: none;
+    }
+
+    .intro-cell {
+        display: table-cell;
+        padding: $content-padding-md;
+        vertical-align: bottom;
+        background-color: transparent;
+        color: $text-color;
+
+        .title {
+            color: $brand-primary;
+        }
+    }
+
+    .intro-container {
+        max-width: $container-md-width;
+        margin: auto;
+    }
+
+    .intro-content {
+        @include column-width(7);
+    }
+}

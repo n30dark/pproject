@@ -68,7 +68,7 @@ class IndexController {
             if ($dh = opendir($path)) {
                 //foreach file, getBrush(filename)
                 while (($file = readdir($dh)) !== false ) {
-                    if ($file != "." && $file != ".." && $file != ".AppleDouble") {
+                    if ($file != "." && $file != ".." && $file != ".AppleDouble" && $file != ".DS_Store") {
                         $aux = explode(".", $file);
                         $brushId = $aux[0];
                         $brushes[] = $this->getBrush($brushId);
@@ -155,4 +155,4 @@ class IndexController {
         return $retailer;
     }
 
-} 
+}

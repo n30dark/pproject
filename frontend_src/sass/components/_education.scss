@@ -1,0 +1,43 @@
+.education-container {
+    width: 100%;
+    @include clearfix;
+}
+
+.education-image {
+    img {
+        display: block;
+    }
+}
+
+.education-content {
+    width: 100%;
+    padding: $content-padding-xs;
+}
+
+@media (min-width: $container-sm) {
+    .education-content {
+        padding: $content-padding-sm;
+    }
+}
+
+@media (min-width: $container-md) {
+    .education-container {
+        display: table;
+        table-layout: fixed;
+        height: $container-md-height;
+        max-width: $container-md-width;
+        margin: auto;
+    }
+
+    .education-image {
+        display: table-cell;
+        width: 50%;
+    }
+
+    .education-content {
+        display: table-cell;
+        width: 50%;
+        padding: $content-padding-md;
+        vertical-align: middle;
+    }
+}

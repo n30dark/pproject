@@ -1,0 +1,27 @@
+{
+  "name": "phillips sonicare",
+  "version": "0.0.1",
+  "authors": [],
+  "description": "phillips sonicare",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "hammerjs": "~2",
+    "jquery": "~2",
+    "modernizr": "~2.8",
+    "greensock": "~1.13",
+    "bourbon": "~3.2",
+    "normalize-css": "~3.0.1",
+    "underscore": "~1.7.0",
+    "backbone": "~1.1.2"
+  }
+}

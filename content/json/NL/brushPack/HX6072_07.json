@@ -1,0 +1,13 @@
+{
+    "id": "HX6072_07",
+    "brush": "HX6072_07",
+    "numBrushes": 2,
+    "price": 14.5,
+    "retailers": [
+        "philips",
+        "amazon",
+        "target",
+        "soap",
+        "drugstore"
+    ]
+}
