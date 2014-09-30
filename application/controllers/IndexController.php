@@ -97,6 +97,10 @@ class IndexController {
         }
         $brush->compatibleBrushHeads = $compatibleBrushes;
 
+        if($_GET["preferred"] == $brushId) {
+            $brush->preferred = 1;
+        }
+
         //return brush object
         return $brush;
 
@@ -134,11 +138,16 @@ class IndexController {
 
         //get retailer for this BrushPack
         $retailerList = array();
-        foreach($brushPack->retailers as $retailer) {
-            if(file_exists(getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "retailer" . DS . $retailer . ".json")){
-                $retailerList[] = $this->getRetailer($retailer);
+        if($_GET["philipsOnly"]) {
+            $retailerList[] = $this->getRetailer("philips");
+        } else {
+            foreach($brushPack->retailers as $retailer) {
+                if(file_exists(getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "retailer" . DS . $retailer . ".json")){
+                    $retailerList[] = $this->getRetailer($retailer);
+                }
             }
         }
+
         $brushPack->retailers = $retailerList;
 
         //return BrushPackModel

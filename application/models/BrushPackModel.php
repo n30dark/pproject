@@ -28,7 +28,9 @@ class BrushPackModel {
         $this->numBrushes = $pack->numBrushes;
         $this->price = $pack->price;
         if ( count($pack->retailers ) > 0 ) {
-            $this->retailers = $pack->retailers;
+            foreach($pack->retailers as $key => $value )
+            $this->retailers[] = $key;
+            $this->retailer_url = $value;
         } else {
             unset($this->retailers);
         }
