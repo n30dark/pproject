@@ -21,16 +21,12 @@
         height: 30px;
         width: 30px;
         font-size: $icon-size-md;
-        color: $blue;
+        background: $blue;
+        color: $white;
         border-radius: 2px;
 
         &.disabled {
             color: $gray;
-        }
-
-        &:hover {
-            background: $blue;
-            color: $white;
         }
     }
 
@@ -227,6 +223,21 @@
 
         .text {
             font-size: 20px;
+        }
+
+        .btn-prev,
+        .btn-next {
+            color: $blue;
+            background: transparent;
+
+            &.disabled {
+                color: $gray;
+            }
+
+            &:hover {
+                background: $blue;
+                color: $white;
+            }
         }
     }
 

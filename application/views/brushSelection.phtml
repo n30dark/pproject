@@ -65,9 +65,8 @@
 
                             <?php foreach($brushhead->brushPacks as $brushPack_i => $brushPack) : ?>
                                 <div class="brushpack <?php echo ($brushHead_i === 0 && $brushPack_i === 0) ? 'active' : ''; ?>" data-id="<?php echo $brushPack->id ?>">
-                                    <div class="numbrushes">X <?php echo $brushPack->numBrushes ?></div>
+                                    <div class="numbrushes"><?php echo $brushPack->numBrushes ?> pack <?php echo $brushhead->name ?></div>
                                     <p>Subscribe your frequent delivery of your brushes at on of these retailers:</p>
-
                                     <div class="retailers">
                                         <?php foreach($brushPack->retailers as $retailer) : ?>
                                             <a class="retailer" data-id="<?php echo $retailer->id ?>" href="<?php echo $retailer->website ?>" target="_blank" rel="nofollow">

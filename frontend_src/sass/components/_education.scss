@@ -4,8 +4,12 @@
 }
 
 .education-image {
+    text-align: center;
+
     img {
         display: block;
+        margin: 0 auto;
+        max-width: 50%;
     }
 }
 
@@ -47,6 +51,10 @@
     .education-image {
         display: table-cell;
         width: 50%;
+
+        img {
+            max-width: 100%;
+        }
     }
 
     .education-content {

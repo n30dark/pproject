@@ -2,7 +2,6 @@
     position: relative;
     height: 0;
     clear: both;
-    text-align: center;
     background: $blue;
     color: $white;
 
@@ -24,8 +23,13 @@
     max-width: 674px;
     padding: $content-padding-xs;
 
+    .numbrushes {
+        font-weight: 500;
+    }
+
     p {
         font-weight: 300;
+        margin-bottom: 0;
     }
 
     &.active {
@@ -38,11 +42,5 @@
 
     .brushpack-arrow {
         opacity: 1;
-    }
-}
-
-@media (min-width: $container-sm) {
-    .brushpack-collection {
-        text-align: left;
     }
 }
