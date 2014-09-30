@@ -3,6 +3,7 @@ var $ = require('jquery');
 var _ = require('underscore');
 var Backbone = require('backbone');
 
+var HeaderView = require('./Header');
 var BrushesView = require('./Brushes');
 var BrushHeadsView = require('./BrushHeads');
 var FooterView = require('./Footer');
@@ -38,6 +39,10 @@ $(document).ready(function() {
 
     $(document).click(function() {
         app.trigger('document:click');
+    });
+
+    new HeaderView({
+        el: $('.p-n01-header')
     });
 
     new BrushesView({

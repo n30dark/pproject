@@ -14,6 +14,19 @@
     padding: $content-padding-xs;
     background-color: $blue;
     color: $white;
+
+    .title {
+        font-weight: 200;
+        line-height: 1;
+
+        strong {
+            font-weight: 900;
+        }
+    }
+
+    p {
+        margin-bottom: 0;
+    }
 }
 
 @media (min-width: $container-sm) {
@@ -52,6 +65,7 @@
     }
 
     .intro-content {
-        @include column-width(7);
+        @include column-push(1);
+        @include column-width(6);
     }
 }

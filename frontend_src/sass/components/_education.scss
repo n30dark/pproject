@@ -12,6 +12,21 @@
 .education-content {
     width: 100%;
     padding: $content-padding-xs;
+
+    .title {
+        color: $blue;
+        font-weight: 900;
+    }
+
+    ul {
+        list-style-position: inside;
+        padding-left: 0;
+        margin-bottom: 0;
+
+        li {
+            margin-bottom: $line-height-computed / 2;
+        }
+    }
 }
 
 @media (min-width: $container-sm) {
@@ -38,6 +53,7 @@
         display: table-cell;
         width: 50%;
         padding: $content-padding-md;
+        padding-right: ($grid-gutter-width / 2);
         vertical-align: middle;
     }
 }
