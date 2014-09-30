@@ -6,19 +6,30 @@
     .title {
         font-weight: bold;
         color: $blue;
+        margin: 0;
+    }
+
+    .text {
+        -webkit-font-smoothing: antialiased;
     }
 
     .btn-prev,
     .btn-next {
         position: absolute;
         top: 50%;
-        height: 24px;
-        width: 24px;
+        height: 30px;
+        width: 30px;
         font-size: $icon-size-md;
         color: $blue;
+        border-radius: 2px;
 
         &.disabled {
             color: $gray;
+        }
+
+        &:hover {
+            background: $blue;
+            color: $white;
         }
     }
 
@@ -102,7 +113,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        color: $blue-lighter;
+        color: $blue-light;
         -webkit-font-smoothing: antialiased;
         @include transform(translate3d(0, 220px, 0));
         @include transition-property(color, transform);
@@ -208,6 +219,14 @@
 @media (min-width: $container-md) {
     .brushes {
         text-align: left;
+
+        .title {
+            font-size: 30px;
+        }
+
+        .text {
+            font-size: 20px;
+        }
     }
 
     .brushes-container {

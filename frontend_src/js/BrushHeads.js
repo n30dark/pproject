@@ -47,8 +47,35 @@ module.exports = Backbone.View.extend({
 
     clickBrushHeadPack: function(e) {
         this.currentPack = $(e.currentTarget);
-        this.currentBrushhead = this.currentPack.closest('.brushhead');
+        var that = this;
+        var brushPackCol = this.currentPack.closest('.brushhead');
 
+        var brushpack = brushPackCol.find('.brushpack[data-id="' + that.currentPack.attr('data-id') + '"]');
+
+        if (brushpack.hasClass('active')) return;
+        brushpack.addClass('active');
+
+        if (brushPackCol.hasClass('active')) {
+            this.currentBrushhead = brushPackCol;
+            this.switchBrushHeadPack(brushpack);
+        } else {
+            TweenMax.to(this.currentBrushhead.find('.brushpack-collection'), 0.5, {
+                height: 0
+            });
+
+            TweenMax.to(brushPackCol.find('.brushpack-collection'), 0.5, {
+                height: brushPackCol.find('.brushpack-collection')[0].scrollHeight,
+                onComplete: function() {
+                    brushPackCol.find('.brushpack-collection').height('auto');
+                    that.currentBrushhead = brushPackCol;
+
+                    that.switchBrushHeadPack(brushpack);
+                }
+            });
+        }
+    },
+
+    switchBrushHeadPack: function(brushpack) {
         this.ui.brushHeadPackBtns.removeClass('active');
         this.currentPack.addClass('active');
 
@@ -56,8 +83,7 @@ module.exports = Backbone.View.extend({
         this.currentBrushhead.addClass('active');
 
         this.ui.brushHeadPacks.removeClass('active');
-        this.currentBrushhead.find('.brushpack[data-id="' + this.currentPack.attr('data-id') + '"]')
-            .addClass('active');
+        brushpack.addClass('active');
 
         this.positionArrow();
     },
@@ -71,9 +97,28 @@ module.exports = Backbone.View.extend({
     },
 
     selectBrush: function(id) {
-        this.ui.brushHeadCollection.removeClass('active');
-        this.$('#brushheads-' + id).addClass('active');
+        var that = this;
+        var el = this.$('#brushheads-' + id);
+        TweenMax.to(el, 0, {
+            opacity: 0,
+            force3D: true
+        });
 
-        this.init();
+        TweenMax.to(this.currentCollection, 0.5, {
+            opacity: 0,
+            force3D: true,
+            onComplete: function() {
+                that.currentCollection.removeClass('active');
+                el.addClass('active');
+
+                TweenMax.to(el, 0.5, {
+                    opacity: 1,
+                    force3D: true,
+                    onComplete: function() {
+                        that.init();
+                    }
+                });
+            }
+        });
     }
 });
