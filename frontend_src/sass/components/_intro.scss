@@ -4,8 +4,15 @@
 }
 
 .intro-image {
+    height: $container-xs-height;
+    overflow: hidden;
+
     img {
         display: block;
+        height: 100%;
+        max-width: none;
+        float: right;
+        margin-right: -250px;
     }
 }
 
@@ -32,6 +39,14 @@
 @media (min-width: $container-sm) {
     .intro-cell {
         padding: $content-padding-sm;
+    }
+
+    .intro-image {
+        height: $container-sm-height;
+
+        img {
+            margin-right: 0;
+        }
     }
 }
 
