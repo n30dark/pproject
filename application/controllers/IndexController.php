@@ -97,7 +97,7 @@ class IndexController {
         }
         $brush->compatibleBrushHeads = $compatibleBrushes;
 
-        if($_GET["preferred"] == $brushId) {
+        if(isset($_GET["preferred"]) && $_GET["preferred"] == $brushId) {
             $brush->preferred = 1;
         }
 
@@ -138,7 +138,7 @@ class IndexController {
 
         //get retailer for this BrushPack
         $retailerList = array();
-        if($_GET["philipsOnly"]) {
+        if(isset($_GET["philipsOnly"])) {
             $retailerList[] = $this->getRetailer("philips");
         } else {
             foreach($brushPack->retailers as $retailer) {
