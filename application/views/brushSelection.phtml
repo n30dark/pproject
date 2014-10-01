@@ -7,7 +7,7 @@
 
         <div class="brushes-list">
             <?php foreach($brushes as $i => $brush) : ?>
-                <div id="brush-<?php echo $brush->id ?>" class="brush <?php echo ($i === 0) ? 'active' : ''; ?>" data-id="<?php echo $brush->id ?>">
+                <div id="brush-<?php echo $brush->id ?>" class="brush <?php echo ($brush->preferred === 1) ? 'active' : ''; ?>" data-id="<?php echo $brush->id ?>">
                     <img class="brush-img" src="/content/images/handles/<?php echo $brush->image ?>.png" alt="" />
                     <img class="brush-img-blur" src="/content/images/handles/<?php echo $brush->image ?>-blur.png" alt="" />
                     <div class="brush-name"><?php echo $brush->name ?></div>
@@ -68,8 +68,8 @@
                                     <div class="numbrushes"><?php echo $brushPack->numBrushes ?> pack <?php echo $brushhead->name ?></div>
                                     <p>Subscribe your frequent delivery of your brushes at on of these retailers:</p>
                                     <div class="retailers">
-                                        <?php foreach($brushPack->retailers as $retailer) : ?>
-                                            <a class="retailer" data-id="<?php echo $retailer->id ?>" href="<?php echo $retailer->website ?>" target="_blank" rel="nofollow">
+                                        <?php foreach($brushPack->retailers as $retailer_i => $retailer) : ?>
+                                            <a class="retailer" data-id="<?php echo $retailer->id ?>" href="<?php echo $brushPack->retailers_url[$retailer_i] ?>" target="_blank" rel="nofollow">
                                                 <img src="/content/images/retailer/<?php echo $retailer->logo ?>" alt="" />
                                                 <span class="name"><?php echo $retailer->name ?> ›</span>
                                             </a>
