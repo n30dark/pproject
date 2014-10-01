@@ -1,0 +1,86 @@
+.intro {
+    width: 100%;
+    @include clearfix;
+}
+
+.intro-image {
+    height: $container-xs-height;
+    overflow: hidden;
+
+    img {
+        display: block;
+        height: 100%;
+        max-width: none;
+        float: right;
+        margin-right: -250px;
+    }
+}
+
+.intro-cell {
+    width: 100%;
+    padding: $content-padding-xs;
+    background-color: $blue;
+    color: $white;
+
+    .title {
+        font-weight: 200;
+        line-height: 1;
+
+        strong {
+            font-weight: 900;
+        }
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: $container-sm) {
+    .intro-cell {
+        padding: $content-padding-sm;
+    }
+
+    .intro-image {
+        height: $container-sm-height;
+
+        img {
+            margin-right: 0;
+        }
+    }
+}
+
+@media (min-width: $container-md) {
+    .intro {
+        display: table;
+        table-layout: fixed;
+        height: $container-md-height;
+        background: url('../images/intro-bg.jpg') center top no-repeat;
+    }
+
+    .intro-image {
+        display: none;
+    }
+
+    .intro-cell {
+        display: table-cell;
+        padding: $content-padding-md;
+        vertical-align: bottom;
+        background-color: transparent;
+        color: $text-color;
+
+        .title {
+            color: $brand-primary;
+        }
+    }
+
+    .intro-container {
+        max-width: $container-md-width;
+        margin: auto;
+    }
+
+    .intro-content {
+        @include column-push(1);
+        @include column-width(6);
+    }
+}

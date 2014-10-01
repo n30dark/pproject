@@ -1,0 +1,140 @@
+.brushheads {
+    padding: 50px 10px;
+    background: #e3ebf6;
+}
+
+.brushheads-container {
+    max-width: $container-md-width;
+    margin: 0 auto;
+}
+
+.brushhead-collection {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+.brushhead {
+    position: relative;
+    background: $white;
+    margin-bottom: 20px;
+    overflow: hidden;
+    @include clearfix;
+
+    .brushhead-ribbon {
+        position: absolute;
+        width: 145px;
+        top: 25px;
+        right: -33px;
+        font-size: 17px;
+        line-height: 30px;
+        text-align: center;
+        background: $blue-dark;
+        color: $white;
+        @include transform(rotate(45deg));
+    }
+
+    .brushhead-image {
+        height: 200px;
+        @include column(12);
+        text-align: center;
+        padding: 20px;
+
+        img {
+            max-height: 100%;
+        }
+    }
+
+    .brushhead-content {
+        @include column(12);
+        padding: $content-padding-xs;
+
+        .name {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: $headings-line-height;
+            color: $blue;
+        }
+
+        .key {
+            display: inline-block;
+            font-size: 12px;
+            color: $gray;
+            margin-bottom: $line-height-computed;
+        }
+
+        ul {
+            list-style-position: inside;
+            padding-left: 0;
+        }
+    }
+}
+
+.brushhead-packs {
+    @include clearfix;
+}
+
+.brushhead-pack-btn {
+    @include column(6);
+    color: $gray;
+
+    .brush-icon {
+        font-size: 12px;
+    }
+
+    .numbrushes {
+        text-decoration: underline;
+    }
+
+    .icon-brush {
+        font-size: 34px;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 -12px;
+    }
+
+    .brush-icon-count {
+        font-size: 18px;
+    }
+
+    &.active {
+        color: $blue;
+    }
+}
+
+@media (min-width: $container-sm) {
+    .brushhead {
+        .brushhead-image,
+        .brushhead-content {
+            height: 360px;
+        }
+
+        .brushhead-image {
+            @include column-width(3);
+        }
+
+        .brushhead-content {
+            @include column-width(7);
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+    }
+
+    .brushhead-packs {
+        position: absolute;
+        bottom: 50px;
+        left: 20px;
+        right: 20px;
+    }
+
+    .brushhead-pack-btn {
+        @include column-width(3);
+        border-left: 1px solid $gray;
+
+        &:last-child {
+            border-right: 1px solid $gray;
+        }
+    }
+}

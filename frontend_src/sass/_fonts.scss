@@ -1,0 +1,15 @@
+@include font-face(CentraleSans, '../fonts/CentraleSans-Thin', 200);
+
+@include font-face(CentraleSans, '../fonts/CentraleSans-Light', 300);
+
+// centrale_sans
+@include font-face(CentraleSans, '../fonts/CentraleSans-Book');
+
+// centrale_sans_medium
+@include font-face(CentraleSans, '../fonts/CentraleSans-Medium', 500);
+
+// centrale_sans_bold
+@include font-face(CentraleSans, '../fonts/CentraleSans-Bold', bold);
+
+// centrale_sans_xbold
+@include font-face(CentraleSans, '../fonts/CentraleSans-Xbold', 900);

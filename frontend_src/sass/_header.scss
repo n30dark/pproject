@@ -1,0 +1,421 @@
+.p-hidden {
+    display: none;
+}
+
+.n01-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    button,
+    input,
+    select,
+    textarea {
+        color: inherit;
+        font-family: verdana, arial, sans-serif;
+        font-size: 100%;
+        margin: 0;
+        vertical-align: baseline;
+    }
+
+    button,
+    input {
+        line-height: normal;
+    }
+
+    button,
+    input[type='submit'],
+    input[type='button'] {
+        background: 0;
+        border: 0;
+        padding: 0;
+    }
+
+    button,
+    select {
+        text-transform: none;
+    }
+
+    button,
+    input[type='button'],
+    input[type='reset'],
+    input[type='submit'] {
+        @include appearance(button);
+        cursor: pointer;
+    }
+
+    button {
+        border: 0;
+    }
+
+    fieldset {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    ol,
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.p-n01-header {
+    margin-bottom: 29px;
+    height: 54px;
+
+    .p-shadow-overlay {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 159px;
+        left: 0;
+        top: 0;
+        z-index: 4;
+        background: url('/content/images/bg-shadow.png') repeat-x left top;
+        opacity: .25;
+    }
+
+    .p-topbar {
+        position: relative;
+        z-index: 20;
+        left: 0;
+        top: 0;
+        width: 100%;
+        @include transform(translate3d(0, 0, 0));
+        padding: 20px 11px 0;
+    }
+
+    .p-bar-wrapper,
+    .p-logo-wrapper {
+        position: relative;
+        max-width: 960px;
+        margin: 0 auto;
+        z-index: 21;
+    }
+
+    .p-logo {
+        @include transform(translate3d(0, 0, 0));
+        display: block;
+        position: absolute;
+        width: 140px;
+        margin-top: 20px;
+        box-shadow: 0 3px 8px 3px rgba(0, 0, 0, .2);
+    }
+
+    .p-bar-nav {
+        position: relative;
+        font-size: 0;
+        height: 100%;
+        top: -4px;
+        margin-left: 173px;
+        border-bottom: 1px solid rgba(255, 255, 255, .2);
+
+        > li {
+            position: relative;
+            display: table-cell;
+            height: 100%;
+            cursor: pointer;
+            vertical-align: middle;
+            font-size: 12px;
+            line-height: 16px;
+            padding: 0 25px 5px 15px;
+
+            &.current:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 35px;
+                @include triangle(10px, rgba(255, 255, 255, .2), up);
+            }
+
+            .p-sub-menu-link {
+                color: $white;
+            }
+        }
+    }
+
+    .p-search {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        margin-top: -28px;
+        right: 0;
+        height: 31px;
+        opacity: .8;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        fieldset {
+            float: right;
+            width: 20px;
+        }
+
+        input {
+            font-family: $font-family-base;
+            font-size: 12px;
+            border-radius: 3px;
+            float: right;
+            width: 100%;
+            border: 1px solid #cccedb;
+            height: 31px;
+            opacity: 0;
+            padding-left: 10px;
+            padding-right: 25px;
+            color: #b9bbc7;
+            line-height: 32px;
+
+            @include placeholder {
+                color: #b9bbc7;
+            }
+
+            &:focus {
+                color: #000;
+            }
+        }
+
+        button {
+            display: block;
+            position: absolute;
+            top: 7px;
+            right: 5px;
+            width: 18px;
+            height: 18px;
+            background: url('/content/images/sprite-header-rebrand.png') no-repeat -140px -106px;
+            text-indent: -9999em;
+        }
+    }
+
+    .p-sidebar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        left: 0;
+        @include transition(left 200ms ease-out);
+    }
+
+    .p-n01-header {
+        margin-bottom: 14px;
+
+        .p-logo {
+            width: 106px;
+            margin-top: 10px;
+            margin-left: 6px;
+        }
+
+        .p-topbar {
+            position: absolute;
+            padding-top: 0;
+            margin-top: 10px;
+        }
+
+        .p-bar-nav {
+            display: none;
+        }
+
+        .p-search {
+            display: none;
+            position: relative;
+            height: 48px;
+            padding: 8px 16px 0;
+            margin-top: 0;
+            right: 0;
+            left: 0;
+            top: 0;
+
+            fieldset {
+                float: none;
+                position: relative;
+                @include transition(none);
+                width: auto;
+            }
+
+            input {
+                opacity: 1;
+                font-size: 14px;
+            }
+
+            button {
+                background-position: -176px -106px;
+            }
+        }
+
+        .p-sidebar {
+            overflow: hidden;
+            position: fixed;
+            display: block;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            z-index: 4;
+            @include transform(translate3d(100%, 0, 0));
+            @include transition(all 200ms ease-out);
+
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                left: -20px;
+                top: -20px;
+                bottom: -20px;
+                width: 20px;
+                -moz-box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+                -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+                box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+                z-index: 1;
+            }
+
+            .p-nav-wrapper {
+                height: 100%;
+                overflow-y: scroll;
+                -webkit-overflow-scrolling: touch;
+                margin-left: 44px;
+                background: #ececec;
+            }
+
+            .p-search {
+                display: block;
+            }
+        }
+
+        .p-category-nav {
+            font-size: 16px;
+            line-height: 18px;
+
+            .p-category-nav-item {
+                display: table;
+                width: 100%;
+                border-bottom: 1px solid #6eaec4;
+                @include transform(translatez(0));
+            }
+
+            .p-category-nav-link {
+                display: table-cell;
+                width: 100%;
+                height: 46px;
+                padding: 0 40px 0 16px;
+                background: #0089c4;
+                color: #fff;
+                font-size: 14px;
+                line-height: 22px;
+                vertical-align: middle;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    background: url('/content/images/sprite-header-rebrand.png') -140px -124px;
+                    width: 6px;
+                    height: 9px;
+                    right: 10px;
+                    top: 50%;
+                    margin-top: -5px;
+                }
+            }
+        }
+
+        .p-small-nav {
+            display: block;
+            position: absolute;
+            top: 9px;
+            right: 0;
+            height: 5px;
+            width: 25px;
+            border-top: 5px solid #fff;
+            cursor: pointer;
+
+            &:before,
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: -14px;
+                right: 0;
+                left: 0;
+                height: 5px;
+                border-top: 5px solid #fff;
+            }
+
+            &:after {
+                top: 4px;
+            }
+        }
+    }
+
+    .p-show-sidebar {
+        body {
+            left: calc(-100% + 44px);
+            overflow: hidden;
+            position: fixed;
+        }
+
+        .p-block {
+            pointer-events: none;
+        }
+
+        .p-sidebar {
+            @include transform(translate3d(0, 0, 0));
+            overflow: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .p-left-bar {
+            position: fixed;
+            height: 100%;
+            width: 44px;
+            left: 0;
+            right: 0;
+            z-index: 9;
+        }
+    }
+}
+
+@media screen and (min-width: 701px) {
+    .p-n01-header {
+        margin: 0 2%;
+
+        &.p-show-search {
+            .p-bar-nav {
+                li {
+                    opacity: .2;
+                }
+
+                > li:hover .p-sub-wrapper:before {
+                    display: none;
+                }
+            }
+
+            .p-sub-menu {
+                display: none;
+            }
+
+            .p-search {
+                opacity: 1;
+
+                fieldset {
+                    width: 250px;
+                }
+
+                input {
+                    opacity: 1;
+                }
+
+                button {
+                    background-position: -158px -106px;
+                }
+            }
+        }
+    }
+}

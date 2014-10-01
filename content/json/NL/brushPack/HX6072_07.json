@@ -1,0 +1,13 @@
+{
+    "id": "HX6072_07",
+    "brush": "HX6072_07",
+    "numBrushes": 2,
+    "price": 14.5,
+    "retailers": {
+        "philips": "http://www.philips.nl/e/mondverzorging/consumenten/cons-range-toothbrushes.html",
+        "amazon": "http://www.amazon.com/Philips-Sonicare-HX6932-Rechargeable-Toothbrush/dp/B000UK2W4C",
+        "target": "http://www.target.com/c/electric-toothbrushes-oral-care-health/philips-sonicare/-/N-5xtzxZ56gua",
+        "soap": "http://www.soap.com/html/sg/philips-sonicare-electric-toothbrushes.html",
+        "drugstore": "http://www.drugstore.com/philips-sonicare-essence-sonic-toothbrush-hx561001/qxp406781"
+    }
+}

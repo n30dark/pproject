@@ -1,0 +1,39 @@
+@include font-face(sonicare, '../fonts/sonicare');
+
+.icon {
+    font-family: 'sonicare';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    // Better Font Rendering
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-uni22:before {
+    content: '\22';
+}
+
+.icon-arrow-bottom:before {
+    content: '\e600';
+}
+
+.icon-arrow-left:before {
+    content: '\e601';
+}
+
+.icon-arrow-right:before {
+    content: '\e602';
+}
+
+.icon-arrow-top:before {
+    content: '\e603';
+}
+
+.icon-brush:before {
+    content: '\e604';
+}

@@ -1,0 +1,46 @@
+.brushpack-collection {
+    position: relative;
+    height: 0;
+    clear: both;
+    background: $blue;
+    color: $white;
+
+    .brushpack-arrow {
+        content: '';
+        display: block;
+        position: absolute;
+        opacity: 0;
+        top: -18px;
+        left: -18px;
+        @include triangle(36px, $blue, up);
+        @include transition(opacity .5s ease);
+    }
+}
+
+.brushpack {
+    display: none;
+    margin: 0 auto;
+    max-width: 674px;
+    padding: $content-padding-xs;
+
+    .numbrushes {
+        font-weight: 500;
+    }
+
+    p {
+        font-weight: 300;
+        margin-bottom: 0;
+    }
+
+    &.active {
+        display: block;
+    }
+}
+
+.brushhead.active .brushpack-collection {
+    height: auto;
+
+    .brushpack-arrow {
+        opacity: 1;
+    }
+}

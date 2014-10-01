@@ -1,0 +1,84 @@
+<!--
+$Id: microsite.xml 91 2013-12-18 12:34:12Z jasa $
+  -->
+<microsite xmlns="urn:xmlorg:objects:schema:xmlschema:philips-microsites-descriptor-2.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:xmlorg:objects:schema:xmlschema:philips-microsites-descriptor-2.2 PMSDescriptor-2.2.xsd">
+    <!--  unique ID of microsite  -->
+    <id>89376</id>
+    <!--  vendor supplied name of microsite  -->
+    <name>microsite-sonicare</name>
+    <!--
+     version of the guideline to which this microsite package complies to
+    -->
+    <guideline-version>2.2</guideline-version>
+    <!--
+     type of microsite: can be simple, standard or advanced
+    -->
+    <typeid>standard</typeid>
+    <!--  vendor supplied version of microsite  -->
+    <version>1.0.3</version>
+    <!--  vendor name  -->
+    <agency>SampleAgency</agency>
+    <!--
+     specifies if the microsite uses reporting tags; MUST be true
+    -->
+    <uses-reporting-tags>true</uses-reporting-tags>
+    <!--
+     textual description of the microsite; you can use simple HTML here
+    -->
+    <description></description>
+    <!--  installation instruction for the service team  -->
+    <instructions>
+
+    </instructions>
+    <!--
+     information about the deployment; type is either INITIAL or UPDATE
+    -->
+    <deployment>
+        <type>INITIAL</type>
+    </deployment>
+    <!--  information about the microsite itself  -->
+    <application>
+        <!--
+         type of platform which the microsite requires, MUST be either PHP or ASP.Net
+        -->
+        <type>PHP</type>
+        <!--  required platform version  -->
+        <version>5.3</version>
+        <required-modules>
+            <module id="curl" version="7.24"/>
+            <module id="gd" version="2.0.34"/>
+            <module id="json" version="1.2.1"/>
+        </required-modules>
+        <!--
+         specifies information about user content; e.g. if user content will be stored by the microsite
+        -->
+        <user-content>
+            <enabled>false</enabled>
+        </user-content>
+    </application>
+    <!--  additional configuration for IIS  -->
+    <iis-config>
+        <default-document>index.php</default-document>
+        <binding>
+            <type>http</type>
+            <hostname>sonicare.campaigns.philips.com</hostname>
+        </binding>
+        <mimetypes>
+            <mimeMap fileExtension=".svc" mimeType="text/json"/>
+            <mimeMap fileExtension=".feed" mimeType="application/rss+xml"/>
+        </mimetypes>
+    </iis-config>
+    <!--
+     additional (non-standard) folders, including required permissions
+    -->
+    <folders>
+        <folder path="/comments/images" access="read-write"/>
+    </folders>
+    <!--
+     specifies to which external locations the microsite needs access to
+    -->
+    <interfaces>
+        <web uri="http://www.philips.com"/>
+        <host host="smtp.philips.com" port="25"/>
+    </interfaces>
+</microsite>

@@ -1,0 +1,19 @@
+.retailers {
+    @include row();
+}
+
+.retailer {
+    @include column(12);
+    margin-top: 40px;
+    color: $white;
+    
+    .name {
+        display: block;
+    }
+}
+
+@media (min-width: $container-sm) {
+    .retailer {
+        @include column-width(4);
+    }
+}
