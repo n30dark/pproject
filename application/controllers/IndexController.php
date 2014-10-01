@@ -60,6 +60,7 @@ class IndexController {
     public function getAllBrushes() {
 
         $brushes = array();
+        $hasPreferred = false;
 
         //run through all Json in the json folder
         $path =  getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "brush" . DS;
@@ -71,10 +72,20 @@ class IndexController {
                     if ($file != "." && $file != ".." && $file != ".AppleDouble" && $file != ".DS_Store") {
                         $aux = explode(".", $file);
                         $brushId = $aux[0];
-                        $brushes[] = $this->getBrush($brushId);
+                        $brush = $this->getBrush($brushId);
+
+                        if ($brush->preferred) {
+                            $hasPreferred = true;
+                        }
+
+                        $brushes[] = $brush;
                     }
                 }
             }
+        }
+
+        if (!$hasPreferred) {
+            $brushes[0]->preferred = 1;
         }
 
         //return json with brushes
@@ -119,7 +130,7 @@ class IndexController {
 
         if(isset($_GET["preferred"]) && $_GET["preferred"] == $brushId) {
             $brush->preferred = 1;
-        } else {
+        } else if (!isset($_GET["preferred"])) {
             $firstBrush = $this->getFirstBrushId();
 
             if($brushId == $firstBrush) {

@@ -17,6 +17,7 @@ class BrushModel {
     public $id;
     public $name;
     public $image;
+    public $preferred;
     public $compatibleBrushHeads;
 
     public function __construct($json) {
@@ -25,6 +26,8 @@ class BrushModel {
         $this->id = $brush->id;
         $this->name = $brush->name;
         $this->image = $brush->image;
+        $this->preferred = false;
+
         if ( count($brush->compatibleBrushHeads ) > 0 ) {
             $this->compatibleBrushHeads = $brush->compatibleBrushHeads;
         } else {

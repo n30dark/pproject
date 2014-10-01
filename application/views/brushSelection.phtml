@@ -20,7 +20,7 @@
 
         <ol class="list-unstyled brush-indicators">
             <?php foreach($brushes as $i => $brush) : ?>
-                <li data-id="brush-<?php echo $brush->id ?>" class="brush-indicator <?php echo ($i === 0) ? 'active' : ''; ?>"></li>
+                <li data-id="brush-<?php echo $brush->id ?>" class="brush-indicator <?php echo ($brush->preferred === 1) ? 'active' : ''; ?>"></li>
             <?php endforeach; ?>
         </ol>
     </div>
@@ -29,7 +29,7 @@
 <div class="brushheads">
     <div class="brushheads-container">
         <?php foreach($brushes as $brush_i => $brush) : ?>
-            <div id="brushheads-<?php echo $brush->id ?>" class="brushhead-collection <?php echo ($brush_i === 0) ? 'active' : ''; ?>">
+            <div id="brushheads-<?php echo $brush->id ?>" class="brushhead-collection <?php echo ($brush->preferred === 1) ? 'active' : ''; ?>">
 
                 <?php foreach($brush->compatibleBrushHeads as $brushHead_i => $brushhead) : ?>
                     <div data-id="<?php echo $brushhead->id ?>" class="brushhead <?php echo ($brushHead_i === 0) ? 'active' : ''; ?>">
