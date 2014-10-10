@@ -1,0 +1,12 @@
+{
+    "id": "HX9002",
+    "key": "HX9002",
+    "name": "InterCare",
+    "description": "- Superior cleaning. Whiter teeth.\n- Advanced cleaning for stain removal and whiter teeth\n- Whiter teeth in just one week\n- Removes up to 7 times more plaque than a manual toothbrush",
+    "image": "intercare.jpg",
+    "isStandard": true,
+    "brushPack": [
+        "HX9002_02",
+        "HX9002_03"
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "id": "HX6032",
+    "key": "HX6032",
+    "name": "Sonicare for Kids",
+    "description": "- Superior cleaning. Whiter teeth.\n- Advanced cleaning for stain removal and whiter teeth\n- Whiter teeth in just one week\n- Removes up to 7 times more plaque than a manual toothbrush",
+    "image": "sonicare-for-kids.jpg",
+    "isStandard": true,
+    "brushPack": [
+        "HX6032_02"
+    ]
+}

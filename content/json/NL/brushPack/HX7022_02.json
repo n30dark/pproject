@@ -1,0 +1,11 @@
+{
+    "id": "HX7022_02",
+    "brush": "HX7022_02",
+    "numBrushes": 2,
+    "price": 0,
+    "retailers": {
+        "amazon": "http://www.amazon.com/Philips-HX7022-30-Replacement-Frustration/dp/B0086VI9LC/ref=sr_1_4?ie=UTF8&qid=1400769862&sr=8-4&keywords=Philips+sonicare+e-series+brush+heads",
+        "drugstore": "http://www.drugstore.com/philips-sonicare-e-series-standard-brushheads-hx702266/qxp410153?catid=186721",
+        "target": "http://www.target.com/p/philips-sonicare-hx7052-64-e-series-sensitive-replacement-brush-heads-2-pack/-/A-14150498#prodSlot=medium_1_1&term=HX7052"
+    }
+}

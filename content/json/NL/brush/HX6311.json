@@ -1,0 +1,9 @@
+{
+    "id": "HX6311",
+    "name": "Sonicare For Kids",
+    "image": "sonicare-for-kids",
+    "compatibleBrushHeads": [
+        "HX6032",
+        "HX6042"
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "id": "HX3631",
+    "name": "PowerUp (battery)",
+    "image": "powerup",
+    "compatibleBrushHeads": [
+        "HX3013",
+        "HX3022"
+    ]
+}

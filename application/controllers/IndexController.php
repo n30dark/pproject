@@ -151,9 +151,12 @@ class IndexController {
 
         //$this->getCompatibleBrushes($brushId)
         $brushPackList = array();
-        foreach($brushHead->brushPack as $brushPack) {
-            if(file_exists(getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "brushPack" . DS . $brushPack . ".json")){
-                $brushPackList[] = $this->getBrushPack($brushPack);
+
+        if (isset($brushHead->brushPack)) {
+            foreach($brushHead->brushPack as $brushPack) {
+                if(file_exists(getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "brushPack" . DS . $brushPack . ".json")){
+                    $brushPackList[] = $this->getBrushPack($brushPack);
+                }
             }
         }
         $brushHead->brushPacks = $brushPackList;

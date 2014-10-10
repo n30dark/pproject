@@ -1,0 +1,12 @@
+{
+    "id": "HX7053",
+    "key": "HX7053",
+    "name": "eSeries sensitive",
+    "description": "- Superior cleaning. Whiter teeth.\n- Advanced cleaning for stain removal and whiter teeth\n- Whiter teeth in just one week\n- Removes up to 7 times more plaque than a manual toothbrush",
+    "image": "eseries-sensitive.jpg",
+    "isStandard": true,
+    "brushPack": [
+        "HX7053_02",
+        "HX7053_03"
+    ]
+}

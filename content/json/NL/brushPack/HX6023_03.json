@@ -1,0 +1,10 @@
+{
+    "id": "HX6023_03",
+    "brush": "HX6023_03",
+    "numBrushes": 3,
+    "price": 0,
+    "retailers": {
+        "amazon": "http://www.amazon.com/Philips-Sonicare-HX6023-30-Proresults/dp/B0086VIA1G/ref=sr_1_5?ie=UTF8&qid=1400769718&sr=8-5&keywords=Philips+sonicare+ProResults+brush+heads",
+        "drugstore": "http://www.drugstore.com/philips-sonicare-pro-results-compact-brushheads-hx602364/qxp456027?catid=186721"
+    }
+}

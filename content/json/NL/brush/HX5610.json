@@ -1,0 +1,11 @@
+{
+    "id": "HX5610",
+    "name": "Essence",
+    "image": "essence",
+    "compatibleBrushHeads": [
+        "HX6053",
+        "HX7022",
+        "HX7012",
+        "HX7053"
+    ]
+}
