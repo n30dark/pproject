@@ -4,7 +4,7 @@
     "name": "PowerUp Blue",
     "description": "Simple. Superior.<br />- cleanings in second. Better checkups guaranteed.<br />- and protects growing smiles<br />- cleaning maximizes every second",
     "image": "powerup-blue.jpg",
-    "isStandard": true,
+    "isStandard": false,
     "brushPack": [
 
     ]

@@ -4,6 +4,15 @@
     "image": "sonicare-for-kids",
     "compatibleBrushHeads": [
         "HX6032",
-        "HX6042"
+        "HX6042",
+        "HX6062",
+        "HX6072",
+        "HX6062B",
+        "HX9002",
+        "HX9014",
+        "HX6013",
+        "HX6023",
+        "HX9023",
+        "HX9033"
     ]
 }

@@ -3,13 +3,13 @@
     "name": "Flexcare Platinum",
     "image": "flexcare-platinum",
     "compatibleBrushHeads": [
+        "HX9002",
+        "HX9014",
         "HX6062",
         "HX6072",
         "HX6062B",
-        "HX9002",
-        "HX9014",
         "HX6013",
-        "HX9014",
+        "HX6023",
         "HX9023",
         "HX9033"
     ]
