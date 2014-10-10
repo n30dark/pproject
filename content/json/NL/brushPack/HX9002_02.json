@@ -1,0 +1,10 @@
+{
+    "id": "HX9002_02",
+    "brush": "HX9002_02",
+    "numBrushes": 2,
+    "price": 0,
+    "retailers": {
+        "philips": "http://www.philips-store.com/store/catalog/toothbrush-heads/intercare/sonicare-intercare-standard-sonic-toothbrush-heads/productdetail/HX9002_64_US_SHOPPUB/US/en",
+        "drugstore": "http://www.drugstore.com/philips-sonicare-hx900264-intercare-standard-replacement-brush-heads/qxp485535?catid=186721"
+    }
+}

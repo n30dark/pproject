@@ -1,0 +1,12 @@
+{
+    "id": "HX6013_03",
+    "brush": "HX6013_03",
+    "numBrushes": 3,
+    "price": 0,
+    "retailers": {
+        "philips": "http://www.philips-store.com/store/catalog/toothbrush-heads/proresults/sonicare-proresults-standard-sonic-toothbrush-heads/productdetail/HX6013_64_US_SHOPPUB/US/en",
+        "amazon": "http://www.amazon.com/Philips-Sonicare-HX6013-Proresults-Standard/dp/B0086VI9TE/ref=sr_1_14?ie=UTF8&qid=1400770031&sr=8-14&keywords=diamondclean+white",
+        "drugstore": "http://www.drugstore.com/philips-sonicare-pro-results-standard-brushheads-hx601366/qxp456025?catid=186721",
+        "target": "http://www.target.com/p/philips-sonicare-hx6013-64-proresults-standard-replacement-brush-heads-3-pack/-/A-10648820#prodSlot=medium_1_1&term=HX6013"
+    }
+}

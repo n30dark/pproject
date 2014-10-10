@@ -1,0 +1,12 @@
+{
+    "id": "HX6013",
+    "key": "HX6013",
+    "name": "ProResults",
+    "description": "- Superior cleaning. Whiter teeth.\n- Advanced cleaning for stain removal and whiter teeth\n- Whiter teeth in just one week\n- Removes up to 7 times more plaque than a manual toothbrush",
+    "image": "proresults.jpg",
+    "isStandard": true,
+    "brushPack": [
+        "HX6013_03",
+        "HX6013_04"
+    ]
+}

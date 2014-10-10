@@ -1,0 +1,11 @@
+{
+    "id": "HX7022_03",
+    "brush": "HX7022_03",
+    "numBrushes": 3,
+    "price": 0,
+    "retailers": {
+        "philips": "http://www.philips-store.com/store/catalog/toothbrush-heads/e-series/sonicare-e-series-standard-sonic-toothbrush-heads/productdetail/HX7023_64_US_SHOPPUB/US/en",
+        "amazon": "http://www.amazon.com/Philips-HX7023-30-Replacement-Frustration/dp/B0085RZLQS/ref=sr_1_8?ie=UTF8&qid=1400769910&sr=8-8&keywords=Philips+sonicare+e-series+brush+heads",
+        "drugstore": "http://www.drugstore.com/philips-sonicare-e-series-standard-brushheads-hx702364/qxp410154?catid=186721"
+    }
+}

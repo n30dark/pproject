@@ -1,0 +1,10 @@
+{
+    "id": "HX7012_02",
+    "brush": "HX7012_02",
+    "numBrushes": 2,
+    "price": 0,
+    "retailers": {
+        "amazon": "http://www.amazon.com/Philips-Sonicare-HX7012-64-Replacement/dp/B0085RZLUY/ref=sr_1_14?ie=UTF8&qid=1400769910&sr=8-14&keywords=Philips+sonicare+e-series+brush+heads",
+        "drugstore": "http://www.drugstore.com/philips-sonicare-e-series-compact-replacement-brush-heads-hx701266/qxp450243?catid=186721"
+    }
+}

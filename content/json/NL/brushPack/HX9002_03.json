@@ -1,0 +1,10 @@
+{
+    "id": "HX9002_03",
+    "brush": "HX9002_03",
+    "numBrushes": 3,
+    "price": 0,
+    "retailers": {
+        "amazon": "http://www.amazon.com/Philips-HX9003-64-Intercare-Replacement/dp/B00CUG26YU/ref=sr_1_1?ie=UTF8&qid=1400769251&sr=8-1&keywords=sonicare+intercare+brush+heads+standard",
+        "drugstore": "http://www.drugstore.com/philips-sonicare-hx900364-intercare-standard-replacement-brush-heads/qxp485536?catid=186721"
+    }
+}

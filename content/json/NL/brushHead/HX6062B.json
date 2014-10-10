@@ -1,0 +1,11 @@
+{
+    "id": "HX6062B",
+    "key": "HX6062B",
+    "name": "DiamondClean Black",
+    "description": "Lorem ipsum dolor sit amet consecteuer adiscipt",
+    "image": "diamondclean-black.jpg",
+    "isStandard": true,
+    "brushPack": [
+        "HX6062B_02"
+    ]
+}
