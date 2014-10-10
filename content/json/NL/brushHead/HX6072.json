@@ -4,7 +4,7 @@
     "name": "DiamondClean White Compact",
     "description": "Superior cleaning. Whiter teeth.<br />- Advanced cleaning for stain removal and whiter teeth<br />- Whiter teeth in just one week<br />- Removes up to 7 times more plaque than a manual toothbrush",
     "image": "diamondclean-white-compact.jpg",
-    "isStandard": true,
+    "isStandard": false,
     "brushPack": [
         "HX6072_02"
     ]

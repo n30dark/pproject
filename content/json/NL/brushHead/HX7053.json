@@ -4,7 +4,7 @@
     "name": "eSeries sensitive",
     "description": "Classic power. Classic clean.<br />- A fresh start to better oral health<br />- Removes up to 2 times more plaque than a manual toothbrush",
     "image": "eseries-sensitive.jpg",
-    "isStandard": true,
+    "isStandard": false,
     "brushPack": [
         "HX7053_02",
         "HX7053_03"
