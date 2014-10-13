@@ -62,23 +62,41 @@ class IndexController {
         $brushes = array();
         $hasPreferred = false;
 
+        //get order path
+        $orderPath = getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS;
+
         //run through all Json in the json folder
         $path =  getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "brush" . DS;
 
-        if (scandir($path)) {
-            if ($dh = opendir($path)) {
-                //foreach file, getBrush(filename)
-                while (($file = readdir($dh)) !== false ) {
-                    if ($file != "." && $file != ".." && $file != ".AppleDouble" && $file != ".DS_Store") {
-                        $aux = explode(".", $file);
-                        $brushId = $aux[0];
-                        $brush = $this->getBrush($brushId);
+        //if order file exists
+        if(file_exists($orderPath . "brush_order.json")) {
+            $order = json_decode(file_get_contents($orderPath . "brush_order.json"));
 
-                        if ($brush->preferred) {
-                            $hasPreferred = true;
+            foreach($order->order as $brushId) {
+                $brush = $this->getBrush($brushId);
+
+                if ($brush->preferred) {
+                    $hasPreferred = true;
+                }
+
+                $brushes[] = $brush;
+            }
+        } else {
+            if (scandir($path)) {
+                if ($dh = opendir($path)) {
+                    //foreach file, getBrush(filename)
+                    while (($file = readdir($dh)) !== false ) {
+                        if ($file != "." && $file != ".." && $file != ".AppleDouble" && $file != ".DS_Store") {
+                            $aux = explode(".", $file);
+                            $brushId = $aux[0];
+                            $brush = $this->getBrush($brushId);
+
+                            if ($brush->preferred) {
+                                $hasPreferred = true;
+                            }
+
+                            $brushes[] = $brush;
                         }
-
-                        $brushes[] = $brush;
                     }
                 }
             }
