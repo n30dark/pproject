@@ -7,7 +7,9 @@
 
         <div class="brushes-list">
             <?php foreach($brushes as $i => $brush) : ?>
-                <div id="brush-<?php echo $brush->id ?>" class="brush <?php echo ($brush->preferred === 1) ? 'active' : ''; ?>" data-id="<?php echo $brush->id ?>">
+                <div id="brush-<?php echo $brush->id ?>" class="brush <?php echo ($brush->preferred === 1) ? 'active' : ''; ?>"
+                     data-id="<?php echo $brush->id ?>"
+                     data-name="<?php echo $brush->image ?>">
                     <img class="brush-img" src="/content/images/handles/<?php echo $brush->image ?>.png" alt="" />
                     <img class="brush-img-blur" src="/content/images/handles/<?php echo $brush->image ?>-blur.png" alt="" />
                     <div class="brush-name"><?php echo $brush->name ?></div>
@@ -34,7 +36,7 @@
                 <?php foreach($brush->compatibleBrushHeads as $brushHead_i => $brushhead) : ?>
                     <div data-id="<?php echo $brushhead->id ?>" class="brushhead <?php echo ($brushHead_i === 0) ? 'active' : ''; ?>">
                         <div class="brushhead-image">
-                            <img src="/content/images/brushes/<?php echo $brushhead->image ?>" alt="" />
+                            <img src="/content/images/brushes/<?php echo $brushhead->image ?>.jpg" alt="" />
                         </div>
 
                         <?php if ($brushhead->isStandard) : ?>
@@ -48,7 +50,12 @@
 
                             <div class="brushhead-packs">
                                 <?php foreach($brushhead->brushPacks as $brushPack_i => $brushPack) : ?>
-                                    <button type="button" class="brushhead-pack-btn <?php echo ($brushHead_i === 0 && $brushPack_i === 0) ? 'active' : ''; ?>" data-id="<?php echo $brushPack->id ?>">
+                                    <button type="button"
+                                            class="brushhead-pack-btn <?php echo ($brushHead_i === 0 && $brushPack_i === 0) ? 'active' : ''; ?>"
+                                            data-id="<?php echo $brushPack->id ?>"
+                                            data-pack="<?php echo $brushPack->numBrushes ?>pack"
+                                            data-ctn="<?php echo $brushPack->brush ?>"
+                                            data-name="<?php echo $brushhead->image ?>">
                                         <div class="brush-icon">
                                             <i class="icon icon-brush"></i>
                                             x
@@ -69,7 +76,10 @@
                                     <p>Subscribe your frequent delivery of your brushes at one of these retailers:</p>
                                     <div class="retailers">
                                         <?php foreach($brushPack->retailers as $retailer_i => $retailer) : ?>
-                                            <a class="retailer" data-id="<?php echo $retailer->id ?>" href="<?php echo $brushPack->retailers_url[$retailer_i] ?>" target="_blank" rel="nofollow">
+                                            <a class="retailer"
+                                               data-id="<?php echo $retailer->id ?>"
+                                               data-ctn="<?php echo $brushPack->brush ?>"
+                                               href="<?php echo $brushPack->retailers_url[$retailer_i] ?>" target="_blank" rel="nofollow">
                                                 <img src="/content/images/retailer/<?php echo $retailer->logo ?>" alt="" />
                                                 <span class="name"><?php echo $retailer->name ?> ›</span>
                                             </a>
