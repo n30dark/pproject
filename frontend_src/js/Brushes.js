@@ -3,6 +3,7 @@
 var $ = require('jquery');
 var TweenMax = require('tweenmax');
 var Backbone = require('backbone');
+var AnalyticsTracker = require('./plugins/AnalyticsTracker');
 
 module.exports = Backbone.View.extend({
     activeIndex: 0,
@@ -42,14 +43,22 @@ module.exports = Backbone.View.extend({
     clickBrush: function(e) {
         var item = $(e.currentTarget);
 
+        AnalyticsTracker.trackConversion('interaction', 'image_' + item.attr('data-name'));
+        AnalyticsTracker.trackAjax(item.attr('data-name'));
+
         this.toggleItem(item);
     },
 
     clickIndicator: function(e) {
-        var item = $(e.currentTarget);
-        var index = this.ui.indicators.index(item);
+        var item    = $(e.currentTarget),
+            index   = this.ui.indicators.index(item),
+            navItem = this.ui.navItems.eq(index),
+            number  = index + 1;
 
-        this.toggleItem(this.ui.navItems.eq(index));
+        AnalyticsTracker.trackConversion('interaction', 'carrousel_' + number + '_' + navItem.attr('data-name'));
+        AnalyticsTracker.trackAjax(navItem.attr('data-name'));
+
+        this.toggleItem(navItem);
     },
 
     /**
@@ -59,6 +68,9 @@ module.exports = Backbone.View.extend({
         e.preventDefault();
 
         var prev = this.$('.brushes-list .active').prev();
+
+        AnalyticsTracker.trackConversion('interaction', 'navigation_left_' + prev.attr('data-name'));
+        AnalyticsTracker.trackAjax(prev.attr('data-name'));
 
         if (prev.length) this.toggleItem(prev);
     },
@@ -70,6 +82,9 @@ module.exports = Backbone.View.extend({
         e.preventDefault();
 
         var next = this.$('.brushes-list .active').next();
+
+        AnalyticsTracker.trackConversion('interaction', 'navigation_right_' + next.attr('data-name'));
+        AnalyticsTracker.trackAjax(next.attr('data-name'));
 
         if (next.length) this.toggleItem(next);
     },
