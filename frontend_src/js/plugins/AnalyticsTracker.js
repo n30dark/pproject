@@ -1,4 +1,4 @@
-/* global ga */
+/* global philips */
 
 var _ = require('underscore');
 
@@ -8,38 +8,62 @@ var AnalyticsTracker = function() {
 
 _.extend(AnalyticsTracker.prototype, {
     /**
-     * Track the page.
-     * @param {string} url
-     * @param {string} title
+     * Track the conversion.
+     * @param {string} name
+     * @param {string} description
      */
-    trackPageview: function (url, title) {
-        if (typeof ga === 'undefined') return;
+    trackConversion: function (name, description) {
+        if (typeof philips === 'undefined') return;
 
-        ga('send', 'pageview', {
-            'page':  url,
-            'title': title || null
+        philips.analytics.trackConversion({
+            name: name,
+            descripton: description
         });
     },
 
     /**
-     * Track the event.
-     * @param {string} category
-     * @param {string} action
-     * @param {string} label
-     * @param {int} value
+     * Track the product conversion.
+     * @param {string} name
+     * @param {string} products
      */
-    trackEvent: function (callback, category, action, label, value) {
-        if (typeof ga === 'undefined') {
-            if (callback) callback();
-            return;
+    trackProduct: function (name, products, shopname) {
+        if (typeof philips === 'undefined') return;
+
+        var options = {
+            name: name,
+            products: products
+        };
+
+        if (shopname) {
+            options.shopname = shopname;
         }
 
-        ga('send', 'event', {
-            eventCategory: category,
-            eventAction:   action,
-            eventLabel:    label || null,
-            eventValue:    value || null,
-            hitCallback:   (callback) ? callback : null
+        philips.analytics.trackConversion(options);
+    },
+
+    /**
+     * Track the service conversion.
+     * @param {string} name
+     * @param {string} servicename
+     */
+    trackService: function (name, servicename) {
+        if (typeof philips === 'undefined') return;
+
+        philips.analytics.trackConversion({
+            name: name,
+            servicename: servicename
+        });
+    },
+
+    /**
+     * Track the ajax.
+     * @param {string} pagename
+     */
+    trackAjax: function (pagename) {
+        if (typeof philips === 'undefined') return;
+
+        philips.analytics.trackAjax ({
+            pagename: pagename
         });
     }
 });

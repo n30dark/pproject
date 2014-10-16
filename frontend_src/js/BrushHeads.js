@@ -1,6 +1,7 @@
-var $ = require('jquery');
-var TweenMax = require('tweenmax');
-var Backbone = require('backbone');
+var $                = require('jquery');
+var TweenMax         = require('tweenmax');
+var Backbone         = require('backbone');
+var AnalyticsTracker = require('./plugins/AnalyticsTracker');
 
 module.exports = Backbone.View.extend({
     activeIndex: 0,
@@ -12,7 +13,8 @@ module.exports = Backbone.View.extend({
     ui: {},
 
     events: {
-        'click .brushhead-pack-btn': 'clickBrushHeadPack'
+        'click .brushhead-pack-btn': 'clickBrushHeadPack',
+        'click .retailer': 'clickRetailer'
     },
 
     initialize: function() {
@@ -45,6 +47,16 @@ module.exports = Backbone.View.extend({
         this.positionArrow();
     },
 
+    clickRetailer: function(e) {
+        var retailer = $(e.currentTarget);
+
+        if (retailer.attr('data-id') === 'philips') {
+            AnalyticsTracker.trackProduct('buy_at_philips', retailer.attr('data-ctn'));
+        } else {
+            AnalyticsTracker.trackProduct('buy_at_others', retailer.attr('data-ctn'), retailer.attr('data-id'));
+        }
+    },
+
     clickBrushHeadPack: function(e) {
         this.currentPack = $(e.currentTarget);
         var that = this;
@@ -54,6 +66,9 @@ module.exports = Backbone.View.extend({
 
         if (brushpack.hasClass('active')) return;
         brushpack.addClass('active');
+
+        AnalyticsTracker.trackConversion('interaction', this.currentPack.attr('data-name') + '_' + this.currentPack.attr('data-pack'));
+        AnalyticsTracker.trackAjax('retail_store_results_' + this.currentPack.attr('data-ctn'));
 
         if (brushPackCol.hasClass('active')) {
             this.currentBrushhead = brushPackCol;
@@ -89,6 +104,7 @@ module.exports = Backbone.View.extend({
     },
 
     positionArrow: function(duration) {
+        if (!this.currentPack.length) return;
         TweenMax.to(this.ui.arrow, (duration !== undefined) ? duration : 0.5, {
             x: this.currentPack.offset().left - this.currentBrushhead.offset().left + this.currentPack.outerWidth() /
                 2,

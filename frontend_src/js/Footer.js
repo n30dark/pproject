@@ -1,8 +1,11 @@
-var Backbone = require('backbone');
+var $                = require('jquery');
+var Backbone         = require('backbone');
+var AnalyticsTracker = require('./plugins/AnalyticsTracker');
 
 module.exports = Backbone.View.extend({
     events: {
-        'click .footer-selectsite .footer-title': 'toggleSelectSite'
+        'click .footer-selectsite .footer-title': 'toggleSelectSite',
+        'click .footer-share a': 'clickShare'
     },
 
     ui: {},
@@ -20,5 +23,9 @@ module.exports = Backbone.View.extend({
 
     closeSelectSite: function() {
         this.ui.selectSite.removeClass('active');
+    },
+
+    clickShare: function(e) {
+        AnalyticsTracker.trackService('follow_us', $(e.currentTarget).attr('data-name'));
     }
 });
