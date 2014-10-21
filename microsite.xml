@@ -17,7 +17,7 @@ $Id: microsite.xml 91 2013-12-18 12:34:12Z jasa $
     <!--  vendor supplied version of microsite  -->
     <version>1.0.3</version>
     <!--  vendor name  -->
-    <agency>SampleAgency</agency>
+    <agency>Born05</agency>
     <!--
      specifies if the microsite uses reporting tags; MUST be true
     -->
@@ -28,7 +28,7 @@ $Id: microsite.xml 91 2013-12-18 12:34:12Z jasa $
     <description></description>
     <!--  installation instruction for the service team  -->
     <instructions>
-
+        Copy the content of the zip file to the deployment folder. No additional actions are needed.
     </instructions>
     <!--
      information about the deployment; type is either INITIAL or UPDATE
@@ -56,24 +56,6 @@ $Id: microsite.xml 91 2013-12-18 12:34:12Z jasa $
             <enabled>false</enabled>
         </user-content>
     </application>
-    <!--  additional configuration for IIS  -->
-    <iis-config>
-        <default-document>index.php</default-document>
-        <binding>
-            <type>http</type>
-            <hostname>sonicare.campaigns.philips.com</hostname>
-        </binding>
-        <mimetypes>
-            <mimeMap fileExtension=".svc" mimeType="text/json"/>
-            <mimeMap fileExtension=".feed" mimeType="application/rss+xml"/>
-        </mimetypes>
-    </iis-config>
-    <!--
-     additional (non-standard) folders, including required permissions
-    -->
-    <folders>
-        <folder path="/comments/images" access="read-write"/>
-    </folders>
     <!--
      specifies to which external locations the microsite needs access to
     -->
