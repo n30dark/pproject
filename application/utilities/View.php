@@ -1,9 +1,15 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: sergiopaulino
- * Date: 18/09/14
- * Time: 11:16
+ * Philips Sonicare Brush Microsite - Born05
+ *
+ * View Class
+ *
+ * This is the class for a view
+ *
+ * @author    Sergio Paulino <sergio@netants.nl>
+ * @link      http://www.born05.nl
+ * @copyright Copyright (c) Born05
+ * @license   All rights reserved
  */
 
 class View
