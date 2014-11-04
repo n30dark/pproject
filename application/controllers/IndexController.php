@@ -63,10 +63,10 @@ class IndexController {
         $hasPreferred = false;
 
         //get order path
-        $orderPath = getcwd() . DS . ".." . DS . "content" . DS . "json" . DS . "NL" . DS;
+        $orderPath = getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS;
 
         //run through all Json in the json folder
-        $path =  getcwd() . DS . ".." . DS . "content" . DS . "json" . DS . "NL" . DS . "brush" . DS;
+        $path =  getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "brush" . DS;
 
         //if order file exists
         if(file_exists($orderPath . "brush_order.json")) {
@@ -115,7 +115,7 @@ class IndexController {
         $brushes = array();
 
         //run through all Json in the json folder
-        $path =  getcwd() . DS . ".." . DS . "content" . DS . "json" . DS . "NL" . DS . "brush" . DS;
+        $path =  getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "brush" . DS;
 
         if (scandir($path)) {
             if ($dh = opendir($path)) {
@@ -134,13 +134,13 @@ class IndexController {
     public function getBrush($brushId){
 
         //get brush from json folder (brushID should be the same as the filename, minus ".json")
-        $json = file_get_contents(getcwd() . DS . ".." . DS . "content" . DS . "json" . DS . "NL" . DS . "brush" . DS . $brushId . ".json");
+        $json = file_get_contents(getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "brush" . DS . $brushId . ".json");
         $brush = new \BrushModel($json);
 
         //$this->getCompatibleBrushes($brushId)
         $compatibleBrushes = array();
         foreach($brush->compatibleBrushHeads as $compatible) {
-            if(file_exists(getcwd() . DS . ".." . DS . "content" . DS . "json" . DS . "NL" . DS . "brushHead" . DS . $compatible . ".json")){
+            if(file_exists(getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "brushHead" . DS . $compatible . ".json")){
                 $compatibleBrushes[] = $this->getBrushHead($compatible);
             }
         }
@@ -164,7 +164,7 @@ class IndexController {
     public function getBrushHead($brushHeadId) {
 
         //get brushhead from json folder (brushHeadID should be the same as the filename, minus ".json")
-        $json = file_get_contents(getcwd() . DS . ".." . DS . "content" . DS . "json" . DS . "NL" . DS . "brushHead" . DS . $brushHeadId . ".json");
+        $json = file_get_contents(getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "brushHead" . DS . $brushHeadId . ".json");
         $brushHead = new \BrushHeadModel($json);
 
         //$this->getCompatibleBrushes($brushId)
@@ -172,7 +172,7 @@ class IndexController {
 
         if (isset($brushHead->brushPack)) {
             foreach($brushHead->brushPack as $brushPack) {
-                if(file_exists(getcwd() . DS . ".." . DS . "content" . DS . "json" . DS . "NL" . DS . "brushPack" . DS . $brushPack . ".json")){
+                if(file_exists(getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "brushPack" . DS . $brushPack . ".json")){
                     $brushPackList[] = $this->getBrushPack($brushPack);
                 }
             }
@@ -191,7 +191,7 @@ class IndexController {
     public function getBrushPack($brushPackId) {
 
         //get BrushPackModel from json folder (brushId should be the same as the filename, minus ".json")
-        $json = file_get_contents(getcwd() . DS . ".." . DS . "content" . DS . "json" . DS . "NL" . DS . "brushPack" . DS . $brushPackId . ".json");
+        $json = file_get_contents(getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "brushPack" . DS . $brushPackId . ".json");
         $brushPack  = new \BrushPackModel($json);
 
         //get retailer for this BrushPack
@@ -200,7 +200,7 @@ class IndexController {
             $retailerList[] = $this->getRetailer("philips");
         } else {
             foreach($brushPack->retailers as $retailer) {
-                if(file_exists(getcwd() . DS . ".." . DS . "content" . DS . "json" . DS . "NL" . DS . "retailer" . DS . $retailer . ".json")){
+                if(file_exists(getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "retailer" . DS . $retailer . ".json")){
                     $retailerList[] = $this->getRetailer($retailer);
                 }
             }
@@ -215,7 +215,7 @@ class IndexController {
     public function getRetailer($retailerId) {
 
         //get retailer from json folder (retailerId should be the same as the filename, minus ".json")
-        $json = file_get_contents(getcwd() . DS . ".." . DS . "content" . DS . "json" . DS . "NL" . DS . "retailer" .DS . $retailerId . ".json");
+        $json = file_get_contents(getcwd() . DS . "content" . DS . "json" . DS . "NL" . DS . "retailer" .DS . $retailerId . ".json");
         $retailer = new \RetailerModel($json);
 
         //return Retailer Object
