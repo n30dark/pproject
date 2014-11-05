@@ -19,7 +19,6 @@ class BrushHeadModel {
     public $name;
     public $description;
     public $image;
-    public $isStandard;
     public $brushPack;
 
     public function __construct($json) {
@@ -30,7 +29,6 @@ class BrushHeadModel {
         $this->name = $brushhead->name;
         $this->description = $brushhead->description;
         $this->image = $brushhead->image;
-        $this->isStandard = $brushhead->isStandard;
         if ( count($brushhead->brushPack ) > 0 ) {
             $this->brushPack = $brushhead->brushPack;
         } else {
@@ -38,4 +36,4 @@ class BrushHeadModel {
         }
     }
 
-} 
+}
