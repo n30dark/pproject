@@ -148,12 +148,6 @@ class IndexController {
 
         if(isset($_GET["preferred"]) && $_GET["preferred"] == $brushId) {
             $brush->preferred = 1;
-        } else if (!isset($_GET["preferred"])) {
-            $firstBrush = $this->getFirstBrushId();
-
-            if($brushId == $firstBrush) {
-                $brush->preferred = 1;
-            }
         }
 
         //return brush object
