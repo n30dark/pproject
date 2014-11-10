@@ -3,7 +3,7 @@
     "name": "PowerUp (battery)",
     "image": "powerup",
     "compatibleBrushHeads": [
-        "HX3013",
-        "HX3022"
+        "HX3022",
+        "HX3013"
     ]
 }
