@@ -62,7 +62,7 @@ _.extend(AnalyticsTracker.prototype, {
     trackAjax: function (pagename) {
         if (typeof philips === 'undefined') return;
 
-        philips.analytics.trackAjax ({
+        philips.analytics.trackAjax({
             pagename: pagename
         });
     }

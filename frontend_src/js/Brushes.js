@@ -43,8 +43,8 @@ module.exports = Backbone.View.extend({
     clickBrush: function(e) {
         var item = $(e.currentTarget);
 
-        AnalyticsTracker.trackConversion('interaction', 'image_' + item.attr('data-name'));
-        AnalyticsTracker.trackAjax(item.attr('data-name'));
+        AnalyticsTracker.trackConversion('interaction', 'image_' + item.attr('data-name').replace('-', '_'));
+        AnalyticsTracker.trackAjax(item.attr('data-name').replace('-', '_'));
 
         this.toggleItem(item);
     },
@@ -55,8 +55,8 @@ module.exports = Backbone.View.extend({
             navItem = this.ui.navItems.eq(index),
             number  = index + 1;
 
-        AnalyticsTracker.trackConversion('interaction', 'carrousel_' + number + '_' + navItem.attr('data-name'));
-        AnalyticsTracker.trackAjax(navItem.attr('data-name'));
+        AnalyticsTracker.trackConversion('interaction', 'carrousel_' + number + '_' + navItem.attr('data-name').replace('-', '_'));
+        AnalyticsTracker.trackAjax(navItem.attr('data-name').replace('-', '_'));
 
         this.toggleItem(navItem);
     },
@@ -69,8 +69,8 @@ module.exports = Backbone.View.extend({
 
         var prev = this.$('.brushes-list .active').prev();
 
-        AnalyticsTracker.trackConversion('interaction', 'navigation_left_' + prev.attr('data-name'));
-        AnalyticsTracker.trackAjax(prev.attr('data-name'));
+        AnalyticsTracker.trackConversion('interaction', 'navigation_left_' + prev.attr('data-name').replace('-', '_'));
+        AnalyticsTracker.trackAjax(prev.attr('data-name').replace('-', '_'));
 
         if (prev.length) this.toggleItem(prev);
     },
@@ -83,8 +83,8 @@ module.exports = Backbone.View.extend({
 
         var next = this.$('.brushes-list .active').next();
 
-        AnalyticsTracker.trackConversion('interaction', 'navigation_right_' + next.attr('data-name'));
-        AnalyticsTracker.trackAjax(next.attr('data-name'));
+        AnalyticsTracker.trackConversion('interaction', 'navigation_right_' + next.attr('data-name').replace('-', '_'));
+        AnalyticsTracker.trackAjax(next.attr('data-name').replace('-', '_'));
 
         if (next.length) this.toggleItem(next);
     },

@@ -67,7 +67,7 @@ module.exports = Backbone.View.extend({
         if (brushpack.hasClass('active')) return;
         brushpack.addClass('active');
 
-        AnalyticsTracker.trackConversion('interaction', this.currentPack.attr('data-name') + '_' + this.currentPack.attr('data-pack'));
+        AnalyticsTracker.trackConversion('interaction', this.currentPack.attr('data-name').replace('-', '_') + '_' + this.currentPack.attr('data-pack'));
         AnalyticsTracker.trackAjax('retail_store_results_' + this.currentPack.attr('data-ctn'));
 
         if (brushPackCol.hasClass('active')) {
