@@ -1,12 +1,10 @@
 {
     "id": "HX6062",
     "key": "HX6062",
-    "name": "DiamondClean White",
+    "name": "DiamondClean Black",
     "description": "Superior cleaning. Whiter teeth.<br />- Advanced cleaning for stain removal and whiter teeth<br />- Whiter teeth in just one week<br />- Removes up to 7 times more plaque than a manual toothbrush",
-    "image": "diamondclean-white",
+    "image": "diamondclean-black",
     "brushPack": [
-        "HX6062_02",
-        "HX6062_03",
-        "HX6062_06"
+        "HX6062B_02"
     ]
 }

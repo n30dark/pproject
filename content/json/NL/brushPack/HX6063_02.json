@@ -1,0 +1,11 @@
+{
+    "id": "HX6063_02",
+    "brush": "HX6062/02",
+    "numBrushes": 2,
+    "price": 0,
+    "retailers": {
+        "philips": "http://www.philips-store.com/store/catalog/toothbrush-heads/diamondclean/sonicare-diamondclean-standard-sonic-toothbrush-heads/productdetail/HX6062_64_US_SHOPPUB/US/en",
+        "amazon": "http://www.amazon.com/Philips-HX6062-64-Diamondclean-Replacement/dp/B0086VIA1Q/ref=sr_1_2?ie=UTF8&qid=1400768364&sr=8-2&keywords=sonicare+diamondclean+brush+heads",
+        "drugstore": "http://www.drugstore.com/philips-sonicare-diamondclean-replacement-brush-heads-standard-hx606264/qxp406785?catid=186721"
+    }
+}
