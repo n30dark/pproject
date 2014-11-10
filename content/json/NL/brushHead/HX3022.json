@@ -5,6 +5,7 @@
     "description": "Simple. Superior.<br />- Superior cleanings in seconds. Better checkups guaranteed.<br />- Cleans and protects growing smiles<br />- Superior cleaning maximizes every second",
     "image": "powerup-blue",
     "brushPack": [
-
+        "HX3022_02",
+        "HX3022_03"
     ]
 }
