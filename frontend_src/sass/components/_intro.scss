@@ -1,6 +1,9 @@
 .intro {
     width: 100%;
     @include clearfix;
+    max-width: $container-lg-width;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .intro-image {

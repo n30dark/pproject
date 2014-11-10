@@ -3,6 +3,9 @@
     // background: url('/content/images/brush-bg.jpg') repeat-x center top;
     text-align: center;
     overflow: hidden;
+    max-width: $container-lg-width;
+    margin: 0 auto;
+    overflow: hidden;
 
     .title {
         font-weight: bold;

@@ -1,6 +1,9 @@
 .brushheads {
     padding: 50px 10px;
     background: #e3ebf6;
+    max-width: $container-lg-width;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .brushheads-container {
