@@ -4,6 +4,7 @@
     "numBrushes": 2,
     "price": 0,
     "retailers": {
+        "amazon": "http://www.amazon.com/Philips-Sonicare-HX6062-94-Standard/dp/B00FS2N32M/ref=sr_1_2?ie=UTF8&qid=1415178939&sr=8-2&keywords=DiamondClean+Black",
         "drugstore": "http://www.drugstore.com/philips-sonicare-diamondclean-black-standard-brushheads-hx606294-black/qxp510052?catid=186721"
     }
 }

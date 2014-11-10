@@ -1,0 +1,10 @@
+{
+    "id": "HX9023_03",
+    "brush": "HX9023/03",
+    "numBrushes": 3,
+    "price": 0,
+    "retailers": {
+        "amazon": "http://www.amazon.com/Philips-Sonicare-HX9023-64-Results/dp/B00LM7SBGK/ref=sr_1_1?s=hpc&ie=UTF8&qid=1415179285&sr=1-1&keywords=plaque+control",
+        "drugstore": "http://www.drugstore.com/philips-sonicare-hx902364-plaque-control-brush-heads-white/qxp532330?catid=186721"
+    }
+}
