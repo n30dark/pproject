@@ -1,6 +1,9 @@
 .education-container {
     width: 100%;
     @include clearfix;
+    max-width: $container-lg-width;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .education-image {

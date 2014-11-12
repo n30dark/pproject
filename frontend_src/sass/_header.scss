@@ -419,3 +419,11 @@
         }
     }
 }
+
+@media screen and (min-width: 1024px) {
+    .p-n01-header {
+        position: relative;
+        margin: 0 auto;
+        max-width: $container-lg-width;
+    }
+}

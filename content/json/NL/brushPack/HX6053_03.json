@@ -4,6 +4,7 @@
     "numBrushes": 3,
     "price": 0,
     "retailers": {
-        "amazon": "http://www.amazon.com/Philips-Sonicare-Standard-Ultra-Sensitive/dp/B0086VIA0M/ref=sr_1_1?ie=UTF8&qid=1400769397&sr=8-1&keywords=sonicare+sensitive+brush+heads"
+        "amazon": "http://www.amazon.com/Philips-Sonicare-Standard-Ultra-Sensitive/dp/B0086VIA0M/ref=sr_1_1?ie=UTF8&qid=1400769397&sr=8-1&keywords=sonicare+sensitive+brush+heads",
+        "target": "http://www.target.com/p/philips-sonicare-hx6053-64-proresults-sensitive-replacement-brush-heads-3-pack/-/A-13518212#prodSlot=medium_1_8&term=diamondclean+black+brush+head"
     }
 }

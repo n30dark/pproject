@@ -4,7 +4,6 @@
     "name": "eSeries",
     "description": "Classic power. Classic clean.<br />- A fresh start to better oral health<br />- Removes up to 2 times more plaque than a manual toothbrush",
     "image": "eseries",
-    "isStandard": true,
     "brushPack": [
         "HX7022_02",
         "HX7022_03"

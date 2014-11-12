@@ -4,6 +4,8 @@
     "numBrushes": 2,
     "price": 0,
     "retailers": {
-        "philips": "http://www.philips-store.com/store/catalog/toothbrush-heads/sonicare-for-kids/sonicare-for-kids-standard-sonic-toothbrush-heads/productdetail/HX6042_94_US_SHOPPUB/US/en"
+        "philips": "http://www.philips-store.com/store/catalog/toothbrush-heads/sonicare-for-kids/sonicare-for-kids-standard-sonic-toothbrush-heads/productdetail/HX6042_94_US_SHOPPUB/US/en",
+        "amazon": "http://www.amazon.com/Philips-Sonicare-HX6042-Piece-Standard/dp/B00G5L85S2/ref=sr_1_17?s=hpc&ie=UTF8&qid=1415179618&sr=1-17&keywords=sensitive+compact+sonicare",
+        "drugstore": "http://www.drugstore.com/philips-sonicare-kids-standard-brush-head-hx604294-standard-super-fresh-blue/qxp511002?catid=186721"
     }
 }
