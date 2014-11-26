@@ -56,7 +56,7 @@ module.exports = Backbone.View.extend({
             number  = index + 1;
 
         AnalyticsTracker.trackConversion('interaction', 'carrousel_' + number + '_' + navItem.attr('data-name').replace('-', '_'));
-        AnalyticsTracker.trackAjax(navItem.attr('data-name').replace('-', '_'));
+        AnalyticsTracker.trackAjax('homepage:' + navItem.attr('data-name').replace('-', '_'));
 
         this.toggleItem(navItem);
     },
@@ -70,7 +70,7 @@ module.exports = Backbone.View.extend({
         var prev = this.$('.brushes-list .active').prev();
 
         AnalyticsTracker.trackConversion('interaction', 'navigation_left_' + prev.attr('data-name').replace('-', '_'));
-        AnalyticsTracker.trackAjax(prev.attr('data-name').replace('-', '_'));
+        AnalyticsTracker.trackAjax('homepage:' + prev.attr('data-name').replace('-', '_'));
 
         if (prev.length) this.toggleItem(prev);
     },
@@ -84,7 +84,7 @@ module.exports = Backbone.View.extend({
         var next = this.$('.brushes-list .active').next();
 
         AnalyticsTracker.trackConversion('interaction', 'navigation_right_' + next.attr('data-name').replace('-', '_'));
-        AnalyticsTracker.trackAjax(next.attr('data-name').replace('-', '_'));
+        AnalyticsTracker.trackAjax('homepage:' + next.attr('data-name').replace('-', '_'));
 
         if (next.length) this.toggleItem(next);
     },
