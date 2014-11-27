@@ -63,7 +63,8 @@ _.extend(AnalyticsTracker.prototype, {
         if (typeof philips === 'undefined') return;
 
         philips.analytics.trackAjax({
-            pagename: pagename
+            pagename: pagename,
+            type: 'o'
         });
     }
 });

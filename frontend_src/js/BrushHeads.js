@@ -51,9 +51,9 @@ module.exports = Backbone.View.extend({
         var retailer = $(e.currentTarget);
 
         if (retailer.attr('data-id') === 'philips') {
-            AnalyticsTracker.trackProduct('buy_at_philips', retailer.attr('data-ctn'));
+            AnalyticsTracker.trackProduct('buy_at_philips', retailer.attr('data-ctn').toLowerCase());
         } else {
-            AnalyticsTracker.trackProduct('buy_at_others', retailer.attr('data-ctn'), retailer.attr('data-id'));
+            AnalyticsTracker.trackProduct('buy_at_others', retailer.attr('data-ctn').toLowerCase(), retailer.attr('data-id'));
         }
     },
 
@@ -68,7 +68,7 @@ module.exports = Backbone.View.extend({
         brushpack.addClass('active');
 
         AnalyticsTracker.trackConversion('interaction', this.currentPack.attr('data-name').replace('-', '_') + '_' + this.currentPack.attr('data-pack'));
-        AnalyticsTracker.trackAjax('retail_store_results_' + this.currentPack.attr('data-ctn'));
+        AnalyticsTracker.trackAjax('retail_store_results_' + this.currentPack.attr('data-ctn').toLowerCase());
 
         if (brushPackCol.hasClass('active')) {
             this.currentBrushhead = brushPackCol;
