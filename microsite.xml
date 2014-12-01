@@ -15,7 +15,7 @@ $Id: microsite.xml 91 2013-12-18 12:34:12Z jasa $
     -->
     <typeid>standard</typeid>
     <!--  vendor supplied version of microsite  -->
-    <version>1.0.3</version>
+    <version>1.1.2</version>
     <!--  vendor name  -->
     <agency>Born05</agency>
     <!--
@@ -28,13 +28,13 @@ $Id: microsite.xml 91 2013-12-18 12:34:12Z jasa $
     <description></description>
     <!--  installation instruction for the service team  -->
     <instructions>
-        Copy the content of the zip file to the deployment folder. No additional actions are needed.
+        Replace the contents of the zip in the webroot
     </instructions>
     <!--
      information about the deployment; type is either INITIAL or UPDATE
     -->
     <deployment>
-        <type>INITIAL</type>
+        <type>UPDATE</type>
     </deployment>
     <!--  information about the microsite itself  -->
     <application>
