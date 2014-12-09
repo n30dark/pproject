@@ -17,7 +17,7 @@ _.extend(AnalyticsTracker.prototype, {
 
         philips.analytics.trackConversion({
             name: name,
-            descripton: description
+            description: description
         });
     },
 
